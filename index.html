@@ -1,10 +1,42 @@
-<html>
+<html lang="ru">
 <head>
-    <meta content="text/html; charset=ISO-8859-1" http-equiv="content-type">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Boostmarket</title>
-    <h1> Boostmarket - молодое агенство по продвижению на маркетплейса <br> </h1>
+    <link rel="stylesheet" href="styles.css">
+    <script src="script.js" defer></script>
 </head>
 <body>
-<br>
+    <header>
+        <div class="logo">Boostmarket</div>
+        <nav>
+            <ul>
+                <li><a href="#services">Услуги</a></li>
+                <li><a href="#cases">Кейсы</a></li>
+                <li><a href="#contacts">Контакты</a></li>
+                <li><a href="#team">Персонал</a></li>
+            </ul>
+        </nav>
+    </header>
+    
+    <section class="hero">
+        <h1>Boostmarket - молодое агентство по продвижению на маркетплейсах</h1>
+        <div> <img src="лого.png" alt="logo2":size: 24px;></div>
+        </div>
+        <button onclick="openForm()">Связаться с нами</button>
+    </section>
+    
+    <section id="services" class="services">
+        <div class="service-card" onclick="navigateTo('novice.html')">
+            <h2><b>Для новичков</b>: Ведение кабинета под ключ</h2>
+            <p>Анимация и картинка на фоне</p>
+            <button>Подробнее →</button>
+        </div>
+        <div class="service-card" onclick="navigateTo('sellers.html')">
+            <h2><b>Для тех, кто уже продает</b>: Ведение кабинета под ключ</h2>
+            <p>Анимация и картинка на фоне</p>
+            <button>Подробнее →</button>
+        </div>
+    </section>
 </body>
 </html>
