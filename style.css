@@ -171,18 +171,6 @@ h2 {
     background-color: #004494; /* Цвет кнопки при нажатии */
 }
 
-/* Блок Кейсы */
-.cases {
-    background-color: #f3f3f3;
-    padding: 20px;
-}
-
-.case-content {
-    padding: 20px;
-    background-color: #181414;
-    color: white;
-    border-radius: 10px;
-}
 
 /* Блок Наши сотрудники */
 .employees {

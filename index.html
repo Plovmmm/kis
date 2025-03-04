@@ -5,6 +5,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Пример сайта</title>
     <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="slider.css">
+    <script src="slider.js" defer></script>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@200..800&family=Prosto+One&display=swap" rel="stylesheet">
@@ -48,11 +50,40 @@
         </div>
     </div>
     
+    <!--слайдер кейсы-->
     <div class="cases" id="section3">
         <h2>КЕЙСЫ</h2>
-        <div class="case-content">
-            <h3>Подзаголовок</h3>
-            <p>Основной текст о кейсах и примерах работы.</p>
+        <div class="slider">
+            <div class="slider-wrapper">
+                <div class="slide">
+                    <div class="slide-card" style="background: #181414;">
+                        <p class="slide-number">кейс 1</p>
+                        <p class="slide-description">Заходит слепой в магазин, поднимает собаку поводыря над головой и начинает раскручивать. Его спрашивают: ты че делаешь? Он отвечает. Осматриваюсь.</p>
+                        <div class="arrow">➔</div>
+                    </div>
+                </div>
+                <div class="slide">
+                    <div class="slide-card" style="background: #c5a5ff;">
+                        <p class="slide-number">кейс 2</p>
+                        <p class="slide-description">Клиент приходит в автосалон и просит машину с противоугонной системой. Менеджер показывает машину с заклеенными стеклами.</p>
+                        <div class="arrow">➔</div>
+                    </div>
+                </div>
+                <div class="slide">
+                    <div class="slide-card" style="background: #ff634d;">
+                        <p class="slide-number">кейс 3</p>
+                        <p class="slide-description">Программист спрашивает у коллеги: как тебе этот новый код? Он отвечает: ну, работает же.</p>
+                        <div class="arrow">➔</div>
+                    </div>
+                </div>
+                <div class="slide">
+                    <div class="slide-card" style="background: #b7daff;">
+                        <p class="slide-number">кейс 4</p>
+                        <p class="slide-description">Почему программисты не любят природу? Там слишком много багов.</p>
+                        <div class="arrow">➔</div>
+                    </div>
+                </div>
+            </div>
         </div>
     </div>
     
