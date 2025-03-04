@@ -1,0 +1,217 @@
+.manrope-semibold {
+    font-family: "Manrope", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 600;
+    font-style: normal;
+  }
+
+body {
+    margin: 0;
+    font-family: "Manrope", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 600;
+    font-style: normal;
+  
+}
+
+/* navigation */
+.navbar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    background-color: white;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 30px;
+    padding-left: 5px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    z-index: 1000;
+}
+#logo {
+    max-width: 20%;
+    height: auto;
+}
+.navbar .menu {
+    display: flex;
+    gap: 30px;
+}
+.navbar .menu a {
+    color: #181414;
+    text-decoration: none;
+    font-size: 20px;
+}
+.navbar .menu a:last-child {
+    color: #c5a5ff;
+}
+.header {
+    margin-top: 80px; /* Отступ от фиксированной навигационной панели */
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 40px 30px;
+    margin-left: 7%;
+}
+#shops {
+    max-width: 45%;
+    height: auto;
+}
+.header h2 {
+    font-size: 52px;
+    line-height: 1.4;
+}
+.header h2 span {
+    color: #ff634d; /* Красный цвет для некоторых слов */
+}
+.header img {
+    max-width: 40%;
+}
+.header-btn button {
+    text-align: center;
+    background-color: #ff634d; /* Цвет кнопки */
+    color: white; /* Цвет текста кнопки */
+    font-size: 36px; /* Размер шрифта */
+    padding: 25px 20px; /* Размеры кнопки */
+    border: none; /* Убираем рамку */
+    border-radius: 25px; /* Скругление краёв */
+    cursor: pointer; /* Меняем курсор при наведении */
+    margin-top: 20px; /* Отступ сверху, чтобы кнопка не была слишком близко к тексту */
+    display: inline-block; /* Центрируем кнопку */
+    margin-left: 40%;
+    margin-right: 25%;
+}
+.services {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 60px 30px;
+}
+.services h3 {
+    font-size: 28px;
+    text-align: center;
+    position: relative;
+}
+.services h3::after {
+    content: "";
+    display: block;
+    height: 2px;
+    width: 50px;
+    background-color: #ff634d;
+    margin: 10px auto;
+}
+.services h4 {
+    font-size: 18px;
+    color: #181414;
+    text-align: center;
+}
+
+.vertical-line {
+    display: inline-block; /* Чтобы элемент можно было располагать среди текста */
+    width: 2px;            /* Ширина черточки */
+    height: 20px;          /* Высота черточки, при необходимости можно регулировать */
+    background-color: #ff634d; /* Оранжевый цвет */
+    margin: 0 10px;       /* Отступы вокруг черточки (по необходимости) */
+}
+
+h2 {
+    text-align: center;
+    font-size: 36px;
+}
+
+.service-block {
+    display: flex;
+    margin: 20px 0;
+}
+
+/* Блок Услуги */
+.service-left, .service-right {
+    flex: 1;
+    padding: 20px;
+    border-radius: 10px;
+    color: white;
+    margin: 0 10px;
+}
+
+.service-left {
+    background-color: #c5a5ff;
+}
+
+.service-right {
+    background-color: #ff634d;
+}
+
+.service-icon {
+    max-width: 15%;
+    height: auto;
+    vertical-align: middle;
+    margin-left: 10px;
+}
+
+ .button-right, .button-left {
+    display: inline-block;
+    padding: 10px 20px;
+    background-color: #ff7f6d; /* Однородный цвет кнопки */
+    color: white;
+    text-decoration: none;
+    border-radius: 4px;
+    transition: background-color 0.3s, transform 0.2s;
+}
+
+.button-left {
+    background-color:#ccb3f5;
+}
+
+.button-left:hover, .button-right:hover {
+    background-color: #0056b3; /* Цвет кнопки при наведении */
+    transform: scale(1.05); /* Увеличение кнопки при наведении */
+}
+
+.button-left:active, .button-right:active {
+    background-color: #004494; /* Цвет кнопки при нажатии */
+}
+
+/* Блок Кейсы */
+.cases {
+    background-color: #f3f3f3;
+    padding: 20px;
+}
+
+.case-content {
+    padding: 20px;
+    background-color: #181414;
+    color: white;
+    border-radius: 10px;
+}
+
+/* Блок Наши сотрудники */
+.employees {
+    background-color: white;
+    padding: 20px;
+}
+
+.employee-content {
+    padding: 20px;
+    background-color: #c5a5ff;
+    border-radius: 10px;
+}
+
+/* Блок Как с нами связаться? */
+.contact {
+    padding: 20px;
+}
+
+.contact-content {
+    display: flex;
+    justify-content: space-between;
+}
+
+.contact-text {
+    flex: 1;
+    padding-right: 10px;
+}
+
+.contact-image {
+    flex: 1;
+    text-align: right;
+}

@@ -1,43 +1,81 @@
+<!DOCTYPE html>
 <html lang="ru">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Boostmarket</title>
-    <link rel="stylesheet" href="index.css">
-    <script src="index.js" defer></script>
+    <title>Пример сайта</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@200..800&family=Prosto+One&display=swap" rel="stylesheet">
+
 </head>
 <body>
-    <header>
-        <div class="logoBM">Boostmarket</div>
-        <nav>
-            <ul>
-                <li><a href="#services">Услуги</a></li>
-                <li><a href="#cases">Кейсы</a></li>
-                <li><a href="#contacts">Контакты</a></li>
-                <li><a href="#team">Персонал</a></li>
-            </ul>
-        </nav>
-    </header>
+
+    <div class="navbar">
+        <span><img src="img/logo.jpg" id="logo"></span>
+        <div class="menu">
+            <a href="#section1">кейсы</a>
+            <a href="#section2">контакты</a>
+            <a href="#section3">услуги</a>
+        </div>
+    </div>
+
+    <div class="header" id="section1">
+        <div>
+            <h2><span>Bootsmarket</span> — агентство <span style="color: #181414;">по продвижению</span> на&nbsp;<span style="color: #ff634d;">маркетплейсах</span></h2>
+            
+        </div>
+        <img src="img/shops.jpg" alt="Пример изображения" id="shops">
+    </div>
+    <div class="header-btn">
+        <button class="button" onclick="window.location.href='#section2'">Перейти к услугам</button>
+    </div>
+
+    <div class="services" id="section2">
+        <h2>НАШИ УСЛУГИ <span class="vertical-line"></span> пакеты продвижения для каждого</h2>
+        <div class="service-block">
+            <div class="service-left">
+                <h3>Для новичков <img src="img/key.jpg" alt="Иконка" class="service-icon"></h3>
+                <p>Описание услуги 1. Здесь будет краткое объяснение, что включает в себя данная услуга.</p>
+                <a href="#" class="button-left">Подробнее →</a>
+            </div>
+            <div class="service-right">
+                <h3>Для тех кто уже продаёт <img src="img/molniya.jpg" alt="Иконка" class="service-icon"></h3>
+                <p>Описание услуги 2. Здесь будет краткое объяснение, что включает в себя данная услуга.</p>
+                <a href="#" class="button-right">Подробнее →</a>
+            </div>
+        </div>
+    </div>
     
-    <section class="hero">
-        <h1>Boostmarket - молодое агентство по продвижению на маркетплейсах</h1>
-        <div class="hero-image">
-            <img src="лого2.png" alt="logo2">
+    <div class="cases" id="section3">
+        <h2>КЕЙСЫ</h2>
+        <div class="case-content">
+            <h3>Подзаголовок</h3>
+            <p>Основной текст о кейсах и примерах работы.</p>
         </div>
-        <button onclick="openForm()">Связаться с нами</button>
-    </section>
+    </div>
     
-    <section id="services" class="services">
-        <div class="service-card" onclick="navigateTo('novice.html')">
-            <h2><b>Для новичков</b>: Ведение кабинета под ключ</h2>
-            <p>Анимация и картинка на фоне</p>
-            <button>Подробнее →</button>
+    <div class="employees" id="section4">
+        <h2>НАШИ СОТРУДНИКИ</h2>
+        <div class="employee-content">
+            <h3>Подзаголовок для сотрудников</h3>
+            <p>Основной текст с информацией о членах команды.</p>
         </div>
-        <div class="service-card" onclick="navigateTo('sellers.html')">
-            <h2><b>Для тех, кто уже продает</b>: Ведение кабинета под ключ</h2>
-            <p>Анимация и картинка на фоне</p>
-            <button>Подробнее →</button>
+    </div>
+    
+    <div class="contact" id="section5">
+        <h2>КАК С НАМИ СВЯЗАТЬСЯ?</h2>
+        <div class="contact-content">
+            <div class="contact-text">
+                <p>Текст с информацией о том, как можно связаться с нами, телефоны и адреса.</p>
+            </div>
+            <div class="contact-image">
+                <img src="contact-image.png" alt="Картинка связи">
+            </div>
         </div>
-    </section>
+    </div>
+
 </body>
+</html>
 </html>
