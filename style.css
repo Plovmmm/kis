@@ -24,27 +24,71 @@ body {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 10px 30px;
-    padding-left: 5px;
-    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    padding: 20px 30px; /* Увеличиваем отступы */
+    box-shadow: 0 2px 5px rgba(0,0,0,0.3);
     z-index: 1000;
+    height: 55px; /* Увеличиваем высоту навигационной панели */
 }
+
 #logo {
-    max-width: 20%;
-    height: auto;
+    width: 250px; /* Фиксированная ширина логотипа */
+    height: auto; /* Высота автоматически подстраивается под пропорции */
 }
+
 .navbar .menu {
     display: flex;
     gap: 30px;
 }
+
 .navbar .menu a {
     color: #181414;
     text-decoration: none;
-    font-size: 20px;
+    font-size: 22px; /* Увеличиваем размер шрифта */
+    font-weight: 500; /* Делаем шрифт немного жирнее */
 }
+
 .navbar .menu a:last-child {
     color: #c5a5ff;
 }
+
+/* Стили для кнопки меню на мобильных устройствах */
+.menu-toggle {
+    display: none; /* Скрываем кнопку по умолчанию */
+    background: none;
+    border: none;
+    font-size: 28px; /* Увеличиваем размер кнопки */
+    cursor: pointer;
+}
+
+/* Медиа-запрос для мобильных устройств */
+@media (max-width: 768px) {
+    .menu-toggle {
+        display: block; /* Показываем кнопку на мобильных устройствах */
+    }
+
+    .navbar .menu {
+        display: none; /* Скрываем меню на мобильных */
+        flex-direction: column;
+        position: absolute;
+        top: 100%;
+        left: 0;
+        right: 0;
+        background-color: white;
+        padding: 15px; /* Увеличиваем отступы внутри меню */
+        box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    }
+
+    .navbar .menu.active {
+        display: flex; /* Показываем меню, когда оно активно */
+    }
+
+    .navbar .menu a {
+        font-size: 20px; /* Уменьшаем размер шрифта для мобильных */
+        padding: 10px 0; /* Добавляем отступы между ссылками */
+    }
+}
+
+/* шапка */
 .header {
     margin-top: 80px; /* Отступ от фиксированной навигационной панели */
     display: flex;
