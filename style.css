@@ -52,6 +52,7 @@ body {
     align-items: center;
     padding: 40px 30px;
     margin-left: 7%;
+    
 }
 #shops {
     max-width: 45%;
@@ -60,6 +61,7 @@ body {
 .header h2 {
     font-size: 52px;
     line-height: 1.4;
+    text-align: left;
 }
 .header h2 span {
     color: #ff634d; /* Красный цвет для некоторых слов */
