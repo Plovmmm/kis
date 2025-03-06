@@ -9,6 +9,8 @@
     <script src="slider.js" defer></script>
     <link rel="stylesheet" href="karusel.css">
     <script src="karusel.js" defer></script>
+    <link rel="stylesheet" href="forma.css">
+    <script src="forma.js" defer></script>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@200..800&family=Prosto+One&display=swap" rel="stylesheet">
@@ -32,9 +34,36 @@
         </div>
         <img src="img/shops.jpg" alt="Пример изображения" id="shops">
     </div>
-    <div class="header-btn">
-        <button class="button" onclick="window.location.href='#section2'">Перейти к услугам</button>
+
+<!-- Кнопка "Оставить заявку" -->
+<div class="header-btn">
+    <button class="button" onclick="openForm()">Оставить заявку</button>
+</div>
+
+<!-- Всплывающее окно с формой -->
+<div id="formOverlay" class="form-overlay">
+    <div class="form-container">
+        <span class="close-btn" onclick="closeForm()">&times;</span>
+        <h2>Оставить заявку</h2>
+        <form id="applicationForm">
+            <label for="name">Ваше имя:</label>
+            <input type="text" id="name" name="name" required>
+
+            <label for="phone">Ваш номер телефона:</label>
+            <input type="tel" id="phone" name="phone" required>
+
+            <label for="marketplace">Выбранный маркетплейс:</label>
+            <select id="marketplace" name="marketplace" required>
+                <option value="Wildberries">Wildberries</option>
+                <option value="Ozon">Ozon</option>
+                <option value="Яндекс.Маркет">Яндекс.Маркет</option>
+                <option value="Другой">Другой</option>
+            </select>
+
+            <button type="submit" class="submit-btn">Отправить</button>
+        </form>
     </div>
+</div>
 
     <div class="services" id="section2">
         <h2>НАШИ УСЛУГИ <span class="vertical-line"></span> пакеты продвижения для каждого</h2>
