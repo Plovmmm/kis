@@ -7,6 +7,8 @@
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="slider.css">
     <script src="slider.js" defer></script>
+    <link rel="stylesheet" href="karusel.css">
+    <script src="karusel.js" defer></script>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@200..800&family=Prosto+One&display=swap" rel="stylesheet">
@@ -89,9 +91,32 @@
     
     <div class="employees" id="section4">
         <h2>НАШИ СОТРУДНИКИ</h2>
-        <div class="employee-content">
-            <h3>Подзаголовок для сотрудников</h3>
-            <p>Основной текст с информацией о членах команды.</p>
+        <div class="carousel">
+            <div class="carousel-wrapper">
+                <div class="carousel-item">
+                    <div class="employee-card" style="background: #c5a5ff;">
+                        <img src="img/employee1.png" alt="Сотрудник 1">
+                        <h3>Сотрудник 1</h3>
+                        <p>Описание сотрудника 1.</p>
+                    </div>
+                </div>
+                <div class="carousel-item">
+                    <div class="employee-card" style="background: #ff634d;">
+                        <img src="img/employee2.png" alt="Сотрудник 2">
+                        <h3>Сотрудник 2</h3>
+                        <p>Описание сотрудника 2.</p>
+                    </div>
+                </div>
+                <div class="carousel-item">
+                    <div class="employee-card" style="background: #b7daff;">
+                        <img src="img/employee3.png" alt="Сотрудник 3">
+                        <h3>Сотрудник 3</h3>
+                        <p>Описание сотрудника 3.</p>
+                    </div>
+                </div>
+            </div>
+            <button class="carousel-arrow prev" onclick="moveCarousel(-1)">&#10094;</button>
+            <button class="carousel-arrow next" onclick="moveCarousel(1)">&#10095;</button>
         </div>
     </div>
     

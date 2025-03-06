@@ -1,15 +1,30 @@
+/* Стили для слайдера с кейсами */
+.cases {
+  padding: 60px 20px; /* Отступы сверху и снизу */
+  background-color: white; /* Белый фон, как раньше */
+  text-align: left; /* Возвращаем выравнивание текста по левому краю */
+}
+
+.cases h2 {
+  margin-bottom: 40px; /* Отступ снизу для заголовка */
+  text-align: center; /* Заголовок по центру */
+}
+
 .slider {
   width: 100%;
-  height: 400px; /* Высота для мобильной версии */
+  height: 500px; /* Высота слайдера */
   position: relative;
-  margin: 0;
-  overflow: hidden; /* Скрываем выходящие за пределы элементы */
+  margin: 0 auto;
+  overflow: hidden;
+  perspective: 1000px; /* Перспектива для 3D-эффекта */
 }
 
 .slider-wrapper {
   position: relative;
   width: 100%;
   height: 100%;
+  transform-style: preserve-3d; /* Сохраняем 3D-преобразования */
+  transition: transform 0.8s ease; /* Плавное переключение */
 }
 
 .slide {
@@ -26,7 +41,7 @@
   width: 80%;
   max-width: 600px;
   height: 300px;
-  padding: 60px;
+  padding: 60px; /* Уменьшаем отступы внутри карточки */
   border-radius: 15px;
   box-shadow: 0 10px 20px rgba(0, 0, 0, 0.7);
   background: white;
@@ -36,6 +51,8 @@
   left: 50%;
   transform: translate(-50%, -50%);
   transition: transform 0.8s ease, opacity 0.8s ease;
+  text-align: left; /* Возвращаем выравнивание текста по левому краю */
+  border: none; /* Убираем рамки */
 }
 
 .slide-card .slide-number {
@@ -46,15 +63,16 @@
 
 .slide-card .slide-description {
   font-size: 18px;
+  line-height: 1.6; /* Улучшаем читаемость текста */
 }
 
 /* Адаптация для мобильных устройств */
 @media (max-width: 768px) {
   .slider {
-    height: 500px; /* Увеличиваем высоту для мобильных устройств */
+      height: 400px; /* Уменьшаем высоту для мобильных устройств */
   }
 
   .slide-card {
-    padding: 20px; /* Уменьшаем отступы для мобильных устройств */
+      padding: 20px; /* Уменьшаем отступы для мобильных устройств */
   }
 }

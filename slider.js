@@ -22,9 +22,9 @@ slides.forEach((slide, index) => {
   card.style.top = '50%'; // Центрируем по вертикали
   card.style.left = '50%'; // Центрируем по горизонтали
   card.style.transform = `translate(-50%, -50%) translateY(${index * 50}px) translateX(${index * 60}px)`; // Начальное положение карточек
-  card.style.transition = 'transform 0.8s ease, opacity 0.8s ease'; // Плавные переходы
+  card.style.transition = 'transform 0.9s ease, opacity 0.9s ease'; // Плавные переходы
   card.style.zIndex = slides.length - index; // Устанавливаем z-index для правильного порядка
-  card.style.opacity = index === 0 ? 1 : 0.8; // Убираем прозрачность для всех слайдов
+  card.style.opacity = index === 0 ? 1 : 1; // Убираем прозрачность для всех слайдов
 });
 
 // Функция для перестановки слайдов
@@ -59,7 +59,7 @@ async function reorderSlides(direction) {
 function isSliderInViewport() {
   const sliderRect = slider.getBoundingClientRect();
   const windowHeight = window.innerHeight;
-  return sliderRect.top <= windowHeight * 0.8 && sliderRect.bottom >= windowHeight * 0.2; // Уточняем зону видимости
+  return sliderRect.top <= windowHeight * 0.9 && sliderRect.bottom >= windowHeight * 0.2; // Уточняем зону видимости
 }
 
 // Обработка события скролла мыши (только для десктопов)
@@ -118,7 +118,7 @@ document.addEventListener('DOMContentLoaded', () => {
   slides.forEach((slide, index) => {
     const card = slide.querySelector('.slide-card');
     card.style.zIndex = slides.length - index;
-    card.style.opacity = index === 0 ? 1 : 0.8; // Убираем прозрачность
+    card.style.opacity = index === 0 ? 1 : 1; // Убираем прозрачность
     card.style.transform = `translate(-50%, -50%) translateY(${index * 50}px) translateX(${index * 60}px)`; // Начальное положение
   });
 });
