@@ -8,7 +8,7 @@ const sliderWrapper = document.querySelector('.slider-wrapper');
 
 // Устанавливаем размеры слайдера и обертки
 slider.style.width = '100%';
-slider.style.height = '600px'; // Уменьшаем высоту для лучшего визуального восприятия
+slider.style.height = '600px'; // Высота для десктопной версии
 sliderWrapper.style.position = 'relative';
 sliderWrapper.style.height = '100%';
 
@@ -62,9 +62,9 @@ function isSliderInViewport() {
   return sliderRect.top <= windowHeight * 0.8 && sliderRect.bottom >= windowHeight * 0.2; // Уточняем зону видимости
 }
 
-// Обработка события скролла мыши
+// Обработка события скролла мыши (только для десктопов)
 window.addEventListener('wheel', (e) => {
-  if (isSliderInViewport()) {
+  if (isSliderInViewport() && window.innerWidth > 768) { // Только для экранов шире 768px
     e.preventDefault(); // Запрещаем стандартный скролл
     if (e.deltaY > 0) {
       reorderSlides('next');
@@ -76,19 +76,39 @@ window.addEventListener('wheel', (e) => {
 
 // Обработка свайпов для мобильных устройств
 let touchStartY = 0;
+let touchStartX = 0;
 window.addEventListener('touchstart', (e) => {
   touchStartY = e.touches[0].clientY;
+  touchStartX = e.touches[0].clientX;
 });
 
 window.addEventListener('touchend', (e) => {
   const touchEndY = e.changedTouches[0].clientY;
-  const swipeDistance = touchStartY - touchEndY;
+  const touchEndX = e.changedTouches[0].clientX;
+  const swipeDistanceY = touchStartY - touchEndY;
+  const swipeDistanceX = touchStartX - touchEndX;
 
   if (isSliderInViewport()) {
-    if (swipeDistance > 40) {
-      reorderSlides('next');
-    } else if (swipeDistance < -40) {
-      reorderSlides('prev');
+    // Определяем направление свайпа (вертикальное или горизонтальное)
+    if (Math.abs(swipeDistanceY) > Math.abs(swipeDistanceX)) {
+      if (swipeDistanceY > 40) {
+        reorderSlides('next');
+      } else if (swipeDistanceY < -40) {
+        reorderSlides('prev');
+      }
+    }
+  }
+});
+
+// Переключение слайдов по клику на мобильных устройствах
+sliderWrapper.addEventListener('click', (e) => {
+  if (window.innerWidth <= 768) { // Только для экранов уже 768px
+    const rect = sliderWrapper.getBoundingClientRect();
+    const clickX = e.clientX - rect.left; // Позиция клика относительно слайдера
+    if (clickX > rect.width / 2) {
+      reorderSlides('next'); // Клик справа — следующий слайд
+    } else {
+      reorderSlides('prev'); // Клик слева — предыдущий слайд
     }
   }
 });
@@ -98,7 +118,7 @@ document.addEventListener('DOMContentLoaded', () => {
   slides.forEach((slide, index) => {
     const card = slide.querySelector('.slide-card');
     card.style.zIndex = slides.length - index;
-    card.style.opacity = index === 0 ? 1 : 1; // Убираем прозрачность
-    card.style.transform = `translate(-50%, -50%) translateY(${index * 60}px) translateX(${index * 40}px)`; // Начальное положение
+    card.style.opacity = index === 0 ? 1 : 0.8; // Убираем прозрачность
+    card.style.transform = `translate(-50%, -50%) translateY(${index * 50}px) translateX(${index * 60}px)`; // Начальное положение
   });
 });
