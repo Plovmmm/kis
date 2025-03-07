@@ -5,11 +5,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Boostmarket</title>
     <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="uslugi.css">
     <link rel="stylesheet" href="slider.css">
     <script src="script.js" defer></script>
     <script src="slider.js" defer></script>
-    <link rel="stylesheet" href="karusel.css">
-    <script src="karusel.js" defer></script>
     <link rel="stylesheet" href="forma.css">
     <script src="forma.js" defer></script>
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -67,22 +66,30 @@
     </div>
 </div>
 
-    <div class="services" id="services">
-        <h2>НАШИ УСЛУГИ <span class="vertical-line"></span> пакеты продвижения для каждого</h2>
-        <div class="service-block">
-            <div class="service-left">
-                <h3>Для новичков <img src="img/key.jpg" alt="Иконка" class="service-icon"></h3>
-                <p>Описание услуги 1. Здесь будет краткое объяснение, что включает в себя данная услуга.</p>
-                <a href="#" class="button-left">Подробнее →</a>
-            </div>
-            <div class="service-right">
-                <h3>Для тех кто уже продаёт <img src="img/molniya.jpg" alt="Иконка" class="service-icon"></h3>
-                <p>Описание услуги 2. Здесь будет краткое объяснение, что включает в себя данная услуга.</p>
-                <a href="#" class="button-right">Подробнее →</a>
-            </div>
-        </div>
+<div class="services" id="section2">
+    <h2>НАШИ УСЛУГИ <span class="vertical-line"></span> пакеты продвижения для каждого</h2>
+    <div class="hover-text-one">
+        <!-- Первая картинка -->
+        <figure class="effect-text-three">
+            <img src="img/key.jpg" alt="Для новичков"/>
+            <figcaption>
+                <h3>Для новичков</h3>
+                <p>Мы поможем вам начать продажи на маркетплейсах с нуля!</p>
+                <a href="service.html" class="details-button">Подробнее →</a>
+            </figcaption>
+        </figure>
+        <!-- Вторая картинка -->
+        <figure class="effect-text-four">
+            <img src="img/molniya.jpg" alt="Для опытных"/>
+            <figcaption>
+                <h3>Для тех кто уже продаёт</h3>
+                <p>Мы поможем вам увеличить продажи и оптимизировать процессы!</p>
+                <a href="service.html" class="details-button">Подробнее →</a>
+            </figcaption>
+        </figure>
     </div>
-    
+</div>
+
     <!--слайдер кейсы-->
     <div class="cases" id="cases">
         <h2>КЕЙСЫ</h2>
@@ -120,35 +127,8 @@
         </div>
     </div>
     
-    <div class="employees" id="employees
+    <div class="employees" id="employees">
         <h2>НАШИ СОТРУДНИКИ</h2>
-        <div class="carousel">
-            <div class="carousel-wrapper">
-                <div class="carousel-item">
-                    <div class="employee-card" style="background: #c5a5ff;">
-                        <img src="img/employee1.png" alt="Сотрудник 1">
-                        <h3>Сотрудник 1</h3>
-                        <p>Описание сотрудника 1.</p>
-                    </div>
-                </div>
-                <div class="carousel-item">
-                    <div class="employee-card" style="background: #ff634d;">
-                        <img src="img/employee2.png" alt="Сотрудник 2">
-                        <h3>Сотрудник 2</h3>
-                        <p>Описание сотрудника 2.</p>
-                    </div>
-                </div>
-                <div class="carousel-item">
-                    <div class="employee-card" style="background: #b7daff;">
-                        <img src="img/employee3.png" alt="Сотрудник 3">
-                        <h3>Сотрудник 3</h3>
-                        <p>Описание сотрудника 3.</p>
-                    </div>
-                </div>
-            </div>
-            <button class="carousel-arrow prev" onclick="moveCarousel(-1)">&#10094;</button>
-            <button class="carousel-arrow next" onclick="moveCarousel(1)">&#10095;</button>
-        </div>
     </div>
     
     <div class="contact" id="contact">

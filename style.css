@@ -282,12 +282,37 @@ h2 {
 }
 
 /* Блок Услуги */
+.services {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 60px 30px;
+}
+
+.services h2 {
+    text-align: center;
+    font-size: 48px;
+    margin-bottom: 40px;
+}
+
+.service-block {
+    display: flex;
+    justify-content: center;
+    gap: 20px; /* Расстояние между блоками */
+    width: 100%;
+    max-width: 800px; /* Ограничиваем ширину блока услуг */
+    margin: 0 auto;
+}
+
 .service-left, .service-right {
     flex: 1;
     padding: 20px;
     border-radius: 10px;
     color: white;
-    margin: 0 10px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease, width 0.3s ease;
+    width: 40%; /* Уменьшаем ширину блоков */
+    max-width: 400px; /* Максимальная ширина */
+    cursor: pointer;
 }
 
 .service-left {
@@ -298,35 +323,97 @@ h2 {
     background-color: #ff634d;
 }
 
-.service-icon {
-    max-width: 15%;
-    height: auto;
-    vertical-align: middle;
-    margin-left: 10px;
+/* Блок Услуги */
+.services {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 60px 30px;
 }
 
- .button-right, .button-left {
-    display: inline-block;
-    padding: 10px 20px;
-    background-color: #ff7f6d; /* Однородный цвет кнопки */
+.services h2 {
+    text-align: center;
+    font-size: 48px;
+    margin-bottom: 40px;
+}
+
+.service-block {
+    display: flex;
+    justify-content: center;
+    gap: 20px; /* Расстояние между блоками */
+    width: 100%;
+    max-width: 800px; /* Ограничиваем ширину блока услуг */
+    margin: 0 auto;
+}
+
+.service-left, .service-right {
+    flex: 1;
+    padding: 20px;
+    border-radius: 10px;
     color: white;
-    text-decoration: none;
-    border-radius: 4px;
-    transition: background-color 0.3s, transform 0.2s;
+    transition: all 0.3s ease; /* Плавные переходы для всех свойств */
+    width: 40%; /* Уменьшаем ширину блоков */
+    max-width: 400px; /* Максимальная ширина */
+    cursor: pointer;
+    position: relative; /* Для позиционирования текста */
+    overflow: hidden; /* Скрываем выходящий за пределы контент */
 }
 
-.button-left {
-    background-color:#ccb3f5;
+.service-left {
+    background-color: #c5a5ff;
 }
 
-.button-left:hover, .button-right:hover {
-    background-color: #0056b3; /* Цвет кнопки при наведении */
-    transform: scale(1.05); /* Увеличение кнопки при наведении */
+.service-right {
+    background-color: #ff634d;
 }
 
-.button-left:active, .button-right:active {
-    background-color: #004494; /* Цвет кнопки при нажатии */
+/* Блок Услуги */
+.services {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 60px 30px;
 }
+
+.services h2 {
+    text-align: center;
+    font-size: 48px;
+    margin-bottom: 40px;
+}
+
+.service-block {
+    display: flex;
+    justify-content: center;
+    gap: 20px; /* Расстояние между блоками */
+    width: 100%;
+    max-width: 800px; /* Ограничиваем ширину блока услуг */
+    margin: 0 auto;
+}
+
+.service-left, .service-right {
+    flex: 1;
+    padding: 20px;
+    border-radius: 10px;
+    color: white;
+    transition: all 0.5s ease 0.2s; /* Плавные переходы с задержкой 0.2s */
+    width: 40%; /* Уменьшаем ширину блоков */
+    max-width: 400px; /* Максимальная ширина */
+    cursor: pointer;
+    position: relative; /* Для позиционирования текста */
+    overflow: hidden; /* Скрываем выходящий за пределы контент */
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* Центрируем содержимое по горизонтали */
+}
+
+.service-left {
+    background-color: #c5a5ff;
+}
+
+.service-right {
+    background-color: #ff634d;
+}
+
 
 
 /* Блок Наши сотрудники */
