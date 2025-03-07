@@ -48,7 +48,7 @@ body {
 }
 
 .navbar .menu a:last-child {
-    color: #c5a5ff;
+    color: #ff634d;
 }
 
 /* Стили для кнопки меню на мобильных устройствах */
@@ -89,44 +89,155 @@ body {
 }
 
 /* шапка */
+/* Основные стили для шапки */
 .header {
-    margin-top: 80px; /* Отступ от фиксированной навигационной панели */
+    margin-top: 90px; /* Отступ от фиксированной навигационной панели */
     display: flex;
-    justify-content: space-between;
-    align-items: center;
+    justify-content: space-between; /* Распределяем пространство между текстом и картинкой */
+    align-items: center; /* Выравниваем элементы по центру по вертикали */
     padding: 40px 30px;
     margin-left: 7%;
-    
+    box-sizing: border-box; /* Учитываем padding в общей ширине */
 }
-#shops {
-    max-width: 45%;
-    height: auto;
+
+.header-text {
+    flex: 1; /* Текст занимает доступное пространство */
+    max-width: 60%; /* Ограничиваем ширину текста */
 }
+
+.header-image {
+    width: 39%; /* Фиксированная ширина картинки (пропорционально тексту) */
+    height: auto; /* Сохраняем пропорции */
+    margin-left: 20px; /* Отступ между текстом и картинкой */
+    margin-top: 20px;
+}
+
 .header h2 {
     font-size: 52px;
     line-height: 1.4;
     text-align: left;
 }
+
 .header h2 span {
     color: #ff634d; /* Красный цвет для некоторых слов */
 }
-.header img {
-    max-width: 40%;
+
+.header h2 span:nth-child(2) {
+    color: #181414; /* Черный цвет для второго span */
 }
-.header-btn button {
+
+.header h2 span:nth-child(4) {
+    color: #ff634d; /* Красный цвет для четвертого span */
+}
+
+/* Медиа-запрос для планшетов и небольших десктопов */
+@media (max-width: 1024px) {
+    .header h2 {
+        font-size: 42px; /* Уменьшаем размер шрифта */
+    }
+
+    .header-image {
+        margin-left: 10px;
+        width: 30%; /* Увеличиваем ширину картинки */
+    }
+}
+
+/* Медиа-запрос для мобильных устройств */
+@media (max-width: 768px) {
+    .header {
+        flex-direction: column; /* Меняем направление на вертикальное */
+        align-items: flex-start; /* Выравниваем текст по левому краю */
+        padding: 20px 15px; /* Уменьшаем отступы */
+        margin-left: 5px; /* Убираем отступ слева */
+    }
+
+    .header-text {
+        max-width: 100%; /* Текст занимает всю ширину */
+    }
+
+    .header h2 {
+        font-size: 38px; /* Уменьшаем размер шрифта для мобильных */
+        line-height: 1.2; /* Уменьшаем межстрочный интервал */
+        text-align: left; /* Выравниваем текст по левому краю */
+    }
+
+    .header-image {
+        width: 90%; /* Картинка занимает всю ширину */
+        margin-top: 20px; /* Отступ между текстом и картинкой */
+        margin-left: 10px; /* Убираем отступ слева */
+    }
+}
+/* подшапочные кнопки */
+/* Стили для контейнера кнопок */
+.header-buttons {
+    display: flex;
+    justify-content: center; /* Центрируем кнопки по горизонтали */
+    gap: 40px; /* Расстояние между кнопками */
+    margin-top: 20px; /* Отступ сверху */
+}
+
+/* Общие стили для кнопок */
+.button {
     text-align: center;
-    background-color: #ff634d; /* Цвет кнопки */
-    color: white; /* Цвет текста кнопки */
-    font-size: 36px; /* Размер шрифта */
-    padding: 25px 20px; /* Размеры кнопки */
+    font-size: 32px; /* Размер шрифта */
+    padding: 30px 60px; /* Размеры кнопки */
     border: none; /* Убираем рамку */
     border-radius: 25px; /* Скругление краёв */
     cursor: pointer; /* Меняем курсор при наведении */
-    margin-top: 20px; /* Отступ сверху, чтобы кнопка не была слишком близко к тексту */
+    transition: background-color 0.3s, transform 0.2s; /* Плавные переходы */
+    text-decoration: none; /* Убираем подчеркивание у ссылки */
     display: inline-block; /* Центрируем кнопку */
-    margin-left: 40%;
-    margin-right: 25%;
 }
+
+/* Стили для кнопки "Выбрать услугу" */
+.service-button {
+    background-color: #f3f3f3; /* Цвет кнопки */
+    color: #181414; /* Цвет текста кнопки */
+}
+
+/* Стили для кнопки "Оставить заявку" */
+.request-button {
+    background-color: #ff634d; /* Цвет кнопки */
+    color: white; /* Цвет текста кнопки */
+}
+
+/* Эффекты при наведении */
+.service-button:hover {
+    background-color: #e0e0e0; /* Изменение цвета при наведении */
+}
+
+.request-button:hover {
+    background-color: #e5533d; /* Изменение цвета при наведении */
+}
+
+/* Эффекты при нажатии */
+.service-button:active {
+    transform: scale(0.95); /* Уменьшение размера при нажатии */
+}
+
+.request-button:active {
+    transform: scale(0.95); /* Уменьшение размера при нажатии */
+}
+
+/* Медиа-запрос для мобильных устройств */
+@media (max-width: 768px) {
+    .header-buttons {
+        flex-direction: column; /* Кнопки располагаются вертикально */
+        align-items: stretch; /* Растягиваем кнопки на всю ширину */
+        gap: 10px; /* Уменьшаем расстояние между кнопками */
+    }
+
+    .button {
+        width: 90%; /* Кнопки занимают всю ширину */
+        font-size: 28px; /* Уменьшаем размер шрифта */
+        padding: 20px 15px; /* Уменьшаем размеры кнопки */
+        margin-left: 5%;
+        box-sizing: border-box; /* Учитываем padding в общей ширине */
+
+    }
+}
+
+/* uslugi */
 .services {
     display: flex;
     flex-direction: column;
@@ -162,7 +273,7 @@ body {
 
 h2 {
     text-align: center;
-    font-size: 36px;
+    font-size: 48px;
 }
 
 .service-block {
