@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Boostmarket</title>
+    <link rel="shortcut icon" href="img/logo_ico.png" type="image/x-icon">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="uslugi.css">
+    <link rel="stylesheet" href="slider.css">
+    <script src="script.js" defer></script>
+    <script src="slider.js" defer></script>
+    <link rel="stylesheet" href="forma.css">
+    <script src="forma.js" defer></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@200..800&family=Prosto+One&display=swap" rel="stylesheet">
+</head>
+<body>
+
+    <div class="navbar">
+        <span><img src="img/logo.jpg" id="logo"></span>
+        <button class="menu-toggle" aria-label="Открыть меню">☰</button>
+        <div class="menu">
+            <a href="#cases" class="menu-link">кейсы</a>
+            <a href="#contact" class="menu-link">контакты</a>
+            <a href="#team" class="menu-link">команда</a>
+            <a href="#services" class="menu-link">услуги</a>
+        </div>
+    </div>
+
+    <div class="header">
+        <div class="header-text">
+            <h2><span>Bootsmarket</span> — агентство <span>по продвижению</span> на&nbsp;<span>маркетплейсах</span></h2>
+        </div>
+        <img src="img/shops.jpg" alt="Пример изображения" class="header-image">
+    </div>
+
+    <!-- Кнопка "Оставить заявку" -->
+    <div class="header-buttons">
+        <button class="button request-button" onclick="openForm()">Оставить заявку</button>
+        <a href="#services" class="button service-button">Выбрать услугу</a>
+    </div>
+
+    <!-- Всплывающее окно с формой -->
+    <div id="formOverlay" class="form-overlay">
+        <div class="form-container">
+            <span class="close-btn" onclick="closeForm()">&times;</span>
+            <h2>Оставить заявку</h2>
+            <form id="applicationForm">
+                <label for="name">Ваше имя:</label>
+                <input type="text" id="name" name="name" required>
+
+                <label for="phone">Ваш номер телефона:</label>
+                <input type="tel" id="phone" name="phone" required>
+
+                <label for="marketplace">Выбранный маркетплейс:</label>
+                <select id="marketplace" name="marketplace" required>
+                    <option value="Wildberries">Wildberries</option>
+                    <option value="Ozon">Ozon</option>
+                    <option value="Яндекс.Маркет">Яндекс.Маркет</option>
+                    <option value="Другой">Другой</option>
+                </select>
+
+                <button type="submit" class="submit-btn">Отправить</button>
+            </form>
+        </div>
+    </div>
+
+    <div class="services" id="services">
+        <h2>НАШИ УСЛУГИ <span class="vertical-line"></span> <span>пакеты продвижения для каждого</span></h2>
+        <div class="hover-text-one">
+            <!-- Первая картинка -->
+            <figure class="effect-text-three">
+                <img src="img/key.png" alt="Для новичков"/>
+                <figcaption>
+                    <h3>Ведение кабинета под ключ</h3>
+                    <p>Мы поможем вам начать продажи на маркетплейсах с нуля!</p>
+                    <a href="service.html" class="details-button">Подробнее →</a>
+                </figcaption>
+            </figure>
+            <!-- Вторая картинка -->
+            <figure class="effect-text-four">
+                <img src="img/molniya.png" alt="Для опытных"/>
+                <figcaption>
+                    <h3>Для тех кто уже продаёт</h3>
+                    <p>Мы поможем вам увеличить продажи и оптимизировать процессы!</p>
+                    <a href="service.html" class="details-button">Подробнее →</a>
+                </figcaption>
+            </figure>
+        </div>
+    </div>
+
+    <!--слайдер кейсы-->
+    <div class="cases" id="cases">
+        <h2>КЕЙСЫ, КОТОРЫЕ МЫ ПРЕДЛАГАЕМ</h2>
+        <div class="slider">
+            <div class="slider-wrapper">
+                <div class="slide">
+                    <div class="slide-card" style="background: #181414;">
+                        <p class="slide-number">кейс 1</p>
+                        <p class="slide-description">Заходит слепой в магазин, поднимает собаку поводыря над головой и начинает раскручивать. Его спрашивают: ты че делаешь? Он отвечает. Осматриваюсь.</p>
+                        <div class="arrow">➔</div>
+                    </div>
+                </div>
+                <div class="slide">
+                    <div class="slide-card" style="background: #c5a5ff;">
+                        <p class="slide-number">кейс 2</p>
+                        <p class="slide-description">Клиент приходит в автосалон и просит машину с противоугонной системой. Менеджер показывает машину с заклеенными стеклами.</p>
+                        <div class="arrow">➔</div>
+                    </div>
+                </div>
+                <div class="slide">
+                    <div class="slide-card" style="background: #ff634d;">
+                        <p class="slide-number">кейс 3</p>
+                        <p class="slide-description">Программист спрашивает у коллеги: как тебе этот новый код? Он отвечает: ну, работает же.</p>
+                        <div class="arrow">➔</div>
+                    </div>
+                </div>
+                <div class="slide">
+                    <div class="slide-card" style="background: #b7daff;">
+                        <p class="slide-number">кейс 4</p>
+                        <p class="slide-description">Почему программисты не любят природу? Там слишком много багов.</p>
+                        <div class="arrow">➔</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="team" id="team">
+        <h2>ГОТОВАЯ КОМАНДА <br>ДЛЯ УПРАВЛЕНИЯ МАРКЕТПЛЕЙСАМИ</h2>
+        <div class="team-member">
+            <div class="member-info" style="background-color: #ff634d;">
+                <h3>Руководитель проекта</h3>
+                <p>Руководитель проекта управляет процессным продаж, координирует работу команды, разрабатывает и реализует стратегию продвижения товаров на платформе, оптимизирует ассортимент и анализирует показатели для достижения максимальных результатов.</p>
+                <div class="expand-button">➔</div>
+            </div>
+        </div>
+        <div class="team-member">
+            <div class="member-info" style="background-color: #f4f4f4;">
+                <h3>Менеджер по продажам</h3>
+                <p>Менеджер проекта разрабатывает и реализует стратегию продаж, а также анализирует данные для оптимизации процессов и повышения эффективности продаж на платформе.</p>
+                <div class="expand-button">➔</div>
+            </div>
+        </div>
+        <div class="team-member">
+            <div class="member-info" style="background-color: #c5a5ff;">
+                <h3>Аналитик</h3>
+                <p>Аналитик собирает и анализирует данные о продажах, конкурентах и потребительских предпочтениях, чтобы помочь в разработке эффективных стратегий и улучшении ассортимента.</p>
+                <div class="expand-button">➔</div>
+            </div>
+        </div>
+    </div>
+
+<div class="contact-section" id="contact">
+    <h2>КАК С НАМИ СВЯЗАТЬСЯ?</h2>
+    <div class="contact-content">
+        <div class="contact-text">
+            <p>Каждый продавец – это индивидуальность, и в каждом случае спектр нашего сотрудничества может варьироваться. Заполните форму, и мы скоро с вами свяжемся.</p>
+        </div>
+        <div class="contact-form">
+            <h3>Оставьте заявку</h3>
+            <form id="contactForm">
+                <label for="contactName">Ваше имя:</label>
+                <input type="text" id="contactName" name="name" required>
+
+                <label for="contactPhone">Ваш номер телефона:</label>
+                <input type="tel" id="contactPhone" name="phone" required>
+
+                <label for="contactMarketplace">Выбранный маркетплейс:</label>
+                <select id="contactMarketplace" name="marketplace" required>
+                    <option value="Wildberries">Wildberries</option>
+                    <option value="Ozon">Ozon</option>
+                    <option value="Яндекс.Маркет">Яндекс.Маркет</option>
+                    <option value="Lamoda">Lamoda</option>
+                </select>
+
+                <button type="submit" class="submit-btn">Отправить</button>
+            </form>
+        </div>
+    </div>
+</div>
+
+<footer class="footer">
+    <div class="footer-content">
+        <div class="footer-logo">
+            <img src="img/logo.jpg" alt="Логотип Boostmarket">
+        </div>
+        <div class="footer-menu">
+            <a href="#cases">кейсы</a>
+            <a href="#services">услуги</a>
+            <a href="#team">команда</a>
+        </div>
+        <div class="footer-phone">
+            <p>Телефон: <a href="tel:+79999999999">+7 (999) 999-99-99</a></p>
+        </div>
+        <div class="footer-telegram">
+            <a class="telegram-button" href="https://t.me/boostmarket57" target="_blank">
+                <p>Telegram-канал компании </p><img src="img/tg.png" alt="Telegram">
+            </a>
+        </div>
+    </div>
+</footer>
+
+</body>
+</html>

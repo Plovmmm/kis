@@ -1,0 +1,752 @@
+.manrope-semibold {
+    font-family: "Manrope", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 600;
+    font-style: normal;
+  }
+
+body {
+    margin: 0;
+    font-family: "Manrope", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 600;
+    font-style: normal;
+  
+}
+
+/* navigation */
+.navbar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    background-color: white;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 30px; /* Увеличиваем отступы */
+    box-shadow: 0 2px 5px rgba(0,0,0,0.3);
+    z-index: 1000;
+    height: 55px; /* Увеличиваем высоту навигационной панели */
+}
+
+#logo {
+    width: 250px; /* Фиксированная ширина логотипа */
+    height: auto; /* Высота автоматически подстраивается под пропорции */
+}
+
+.navbar .menu {
+    display: flex;
+    gap: 30px;
+}
+
+.navbar .menu a {
+    color: #181414;
+    text-decoration: none;
+    font-size: 22px;
+    font-weight: 500;
+
+}
+
+.navbar .menu a:last-child {
+    color: #ff634d;
+}
+
+/* Стили для кнопки меню на мобильных устройствах */
+.menu-toggle {
+    display: none; /* Скрываем кнопку по умолчанию */
+    background: none;
+    border: none;
+    font-size: 28px; /* Увеличиваем размер кнопки */
+    cursor: pointer;
+}
+
+/* Медиа-запрос для мобильных устройств */
+@media (max-width: 768px) {
+    .menu-toggle {
+        display: block; /* Показываем кнопку на мобильных устройствах */
+    }
+
+    .navbar .menu {
+        display: none;
+        flex-direction: column;
+        position: absolute;
+        top: 100%;
+        left: 0;
+        right: 0;
+        background-color: white;
+        padding: 15px;
+        box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    }
+
+    .navbar .menu.active {
+        display: flex;
+    }
+
+    .navbar .menu a {
+        font-size: 20px;
+        padding: 10px 0;
+    }
+}
+
+/* шапка */
+/* Основные стили для шапки */
+.header {
+    margin-top: 10px; /* Отступ от фиксированной навигационной панели */
+    display: flex;
+    justify-content: space-between; /* Распределяем пространство между текстом и картинкой */
+    align-items: center; /* Выравниваем элементы по центру по вертикали */
+    padding: 40px 30px;
+    box-sizing: border-box; /* Учитываем padding в общей ширине */
+    max-width: 1600px; /* Ограничиваем максимальную ширину шапки */
+    margin: 0 auto; /* Центрируем шапку на странице */
+    width: 100%; /* Шапка занимает всю доступную ширину */
+   
+}
+
+.header-text {
+    flex: 1; /* Текст занимает доступное пространство */
+    max-width: 60%; /* Ограничиваем ширину текста */
+}
+
+.header-image {
+    width: 45%; /* Уменьшаем ширину картинки */
+    height: auto; /* Сохраняем пропорции */
+    margin-left: 30px;
+    margin-right: 20px; /* Отступ между текстом и картинкой */
+    margin-bottom: -20px;
+    margin-top: 20px;
+}
+
+.header h2 {
+    margin-left:30px;
+    font-size: 4.5vw; /* Размер шрифта зависит от ширины экрана */
+    line-height: 1.4;
+    text-align: left;
+    max-width: 800px; /* Ограничиваем максимальную ширину текста */
+}
+
+.header h2 span {
+    color: #ff634d; /* Красный цвет для некоторых слов */
+}
+
+.header h2 span:nth-child(2) {
+    color: #181414; /* Черный цвет для второго span */
+}
+
+.header h2 span:nth-child(4) {
+    color: #ff634d; /* Красный цвет для четвертого span */
+}
+
+/* Медиа-запрос для планшетов и небольших десктопов */
+@media (max-width: 1024px) {
+    .header h2 {
+        font-size: 48px; /* Фиксированный размер шрифта для планшетов */
+    }
+
+    .header-image {
+        margin-left: 10px;
+        width: 45%; /* Увеличиваем ширину картинки */
+    }
+}
+
+/* Медиа-запрос для мобильных устройств */
+@media (max-width: 768px) {
+    .header {
+        flex-direction: column; /* Меняем направление на вертикальное */
+        align-items: flex-start; /* Выравниваем текст по левому краю */
+        padding: 20px 15px; /* Уменьшаем отступы */
+        margin-left: 10%; /* Убираем отступ слева */
+        padding-top: 40px;
+        padding-bottom: 0;
+        margin-bottom: 0;
+    }
+
+    .header-text {
+        max-width: 100%; /* Текст занимает всю ширину */
+    }
+
+    .header h2 {
+        font-size: 34px; /* Уменьшаем размер шрифта для мобильных */
+        line-height: 1.2; /* Уменьшаем межстрочный интервал */
+        text-align: left; /* Выравниваем текст по левому краю */
+        margin-top: 20px;
+        margin-bottom: 0;
+    }
+
+    .header-image {
+        width: 100%; /* Картинка занимает всю ширину */
+        margin-top: 0; /* Отступ между текстом и картинкой */
+        margin-left: 10px; /* Убираем отступ слева */
+        margin: 20px auto; /* Центрируем картинку */
+    }
+}
+
+/* Медиа-запрос для очень больших экранов */
+@media (min-width: 1600px) {
+    .header h2 {
+        font-size: 72px; /* Фиксированный размер шрифта для очень больших экранов */
+    }
+}
+/* подшапочные кнопки */
+/* Контейнер для кнопок */
+.header-buttons {
+    display: flex;
+    justify-content: center; /* Центрируем кнопки по горизонтали */
+    gap: 40px; /* Расстояние между кнопками */
+    margin-top: 10px; /* Отступ сверху */
+}
+
+/* Общие стили для кнопок */
+.button {
+    text-align: center;
+    font-size: 24px; /* Размер шрифта */
+    padding: 20px 50px; /* Размеры кнопки */
+    border: none; /* Убираем рамку */
+    border-radius: 25px; /* Скругление краёв */
+    cursor: pointer; /* Меняем курсор при наведении */
+    transition: background-color 0.3s, transform 0.2s; /* Плавные переходы */
+    text-decoration: none; /* Убираем подчеркивание у ссылки */
+    display: inline-block; /* Центрируем кнопку */
+    width: auto; /* Автоматическая ширина */
+}
+
+/* Стили для кнопки "Выбрать услугу" */
+.service-button {
+    background-color: #f3f3f3; /* Цвет кнопки */
+    color: #181414; /* Цвет текста кнопки */
+    order: 1; /* На компьютере эта кнопка будет справа */
+}
+
+/* Стили для кнопки "Оставить заявку" */
+.request-button {
+    background-color: #ff634d; /* Цвет кнопки */
+    color: white; /* Цвет текста кнопки */
+    order: 2; /* На компьютере эта кнопка будет слева */
+}
+
+/* Эффекты при наведении */
+.service-button:hover {
+    background-color: #e0e0e0; /* Изменение цвета при наведении */
+}
+
+.request-button:hover {
+    background-color: #e5533d; /* Изменение цвета при наведении */
+}
+
+/* Эффекты при нажатии */
+.service-button:active {
+    transform: scale(0.95); /* Уменьшение размера при нажатии */
+}
+
+.request-button:active {
+    transform: scale(0.95); /* Уменьшение размера при нажатии */
+}
+
+/* Медиа-запрос для мобильных устройств */
+@media (max-width: 768px) {
+    .header-buttons {
+        flex-direction: column; /* Кнопки вертикально */
+        align-items: stretch; /* Растягиваем кнопки на всю ширину */
+        gap: 15px; /* Расстояние между кнопками */
+    }
+
+    .button {
+        width: 100%; /* Кнопки занимают всю ширину */
+        font-size: 20px; /* Размер шрифта */
+        padding: 15px 20px; /* Размеры кнопки */
+        box-sizing: border-box; /* Учитываем padding в общей ширине */
+        order: 0; /* Сбрасываем порядок для мобильной версии */
+    }
+}
+
+/* uslugi */
+.services {
+    margin-top: 50px; /* Отступ сверху */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 60px 30px;
+}
+.services h3 {
+    font-size: 28px;
+    text-align: center;
+    position: relative;
+}
+.services h3::after {
+    content: "";
+    display: block;
+    height: 2px;
+    width: 50px;
+    background-color: #ff634d;
+    margin: 10px auto;
+}
+.services h4 {
+    font-size: 18px;
+    color: #181414;
+    text-align: center;
+}
+
+.vertical-line {
+    display: inline-block; /* Чтобы элемент можно было располагать среди текста */
+    width: 2px;            /* Ширина черточки */
+    height: 20px;          /* Высота черточки, при необходимости можно регулировать */
+    background-color: #ff634d; /* Оранжевый цвет */
+    margin: 0 10px;       /* Отступы вокруг черточки (по необходимости) */
+}
+
+h2 {
+    text-align: center;
+    font-size: 38px;
+}
+
+.service-block {
+    display: flex;
+    margin: 20px 0;
+}
+
+/* Блок Услуги */
+.services {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 60px 30px;
+}
+
+.services h2 {
+    text-align: center;
+    font-size: 48px;
+    margin-bottom: 40px;
+}
+.services h2 span {
+    
+    font-size: 36px;
+    
+}
+
+.service-block {
+    display: flex;
+    justify-content: center;
+    gap: 20px; /* Расстояние между блоками */
+    width: 100%;
+    max-width: 800px; /* Ограничиваем ширину блока услуг */
+    margin: 0 auto;
+}
+
+.service-left, .service-right {
+    flex: 1;
+    padding: 20px;
+    border-radius: 10px;
+    color: white;
+    transition: transform 0.3s ease, box-shadow 0.3s ease, width 0.3s ease;
+    width: 40%; /* Уменьшаем ширину блоков */
+    max-width: 400px; /* Максимальная ширина */
+    cursor: pointer;
+}
+
+.service-left {
+    background-color: #c5a5ff;
+}
+
+.service-right {
+    background-color: #ff634d;
+}
+
+/* Блок Услуги */
+.services {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 60px 30px;
+}
+
+.services h2 {
+    text-align: center;
+    font-size: 48px;
+    margin-bottom: 40px;
+}
+
+.service-block {
+    display: flex;
+    justify-content: center;
+    gap: 20px; /* Расстояние между блоками */
+    width: 100%;
+    max-width: 800px; /* Ограничиваем ширину блока услуг */
+    margin: 0 auto;
+}
+
+.service-left, .service-right {
+    flex: 1;
+    padding: 20px;
+    border-radius: 10px;
+    color: white;
+    transition: all 0.3s ease; /* Плавные переходы для всех свойств */
+    width: 40%; /* Уменьшаем ширину блоков */
+    max-width: 400px; /* Максимальная ширина */
+    cursor: pointer;
+    position: relative; /* Для позиционирования текста */
+    overflow: hidden; /* Скрываем выходящий за пределы контент */
+}
+
+.service-left {
+    background-color: #c5a5ff;
+}
+
+.service-right {
+    background-color: #ff634d;
+}
+
+/* Блок Услуги */
+.services {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 60px 30px;
+}
+
+.services h2 {
+    text-align: center;
+    font-size: 48px;
+    margin-bottom: 40px;
+}
+
+.service-block {
+    display: flex;
+    justify-content: center;
+    gap: 20px; /* Расстояние между блоками */
+    width: 100%;
+    max-width: 800px; /* Ограничиваем ширину блока услуг */
+    margin: 0 auto;
+}
+
+.service-left, .service-right {
+    flex: 1;
+    padding: 20px;
+    border-radius: 10px;
+    color: white;
+    transition: all 0.5s ease 0.2s; /* Плавные переходы с задержкой 0.2s */
+    width: 40%; /* Уменьшаем ширину блоков */
+    max-width: 400px; /* Максимальная ширина */
+    cursor: pointer;
+    position: relative; /* Для позиционирования текста */
+    overflow: hidden; /* Скрываем выходящий за пределы контент */
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* Центрируем содержимое по горизонтали */
+}
+
+.service-left {
+    background-color: #c5a5ff;
+}
+
+.service-right {
+    background-color: #ff634d;
+}
+
+
+/*сотрудники */
+.team {
+    padding: 50px 20px;
+    text-align: center;
+    max-width: 1200px; /* Ограничиваем ширину контейнера */
+    margin: 0 auto; /* Центрируем контейнер */
+}
+
+.team h2 {
+    margin-bottom: 40px;
+    font-size: 2em;
+}
+
+.team-member {
+    margin-bottom: 30px;
+    opacity: 0;
+    transform: translateX(100px);
+    transition: opacity 1.5s ease-out, transform 1.5s ease-out;
+    width: 90%; /* Ширина блоков */
+    position: relative;
+}
+
+.team-member.visible {
+    opacity: 1;
+    transform: translateX(0);
+}
+
+/* Отступы для лесенки */
+.team-member:nth-child(2) {
+    margin-left: 120px; /* Первый блок с отступом 90px */
+}
+
+.team-member:nth-child(3) {
+    margin-left: 60px; /* Второй блок с отступом 30px */
+}
+
+.team-member:nth-child(4) {
+    margin-left: 0; /* Третий блок без отступа */
+}
+
+.member-info {
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    text-align: left;
+    position: relative;
+    transition: transform 0.3s ease, box-shadow 0.3s ease; /* Плавные переходы */
+}
+
+.member-info:hover {
+    transform: scale(1.05); /* Увеличение блока */
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2); /* Увеличение тени */
+    background-color: rgba(255, 255, 255, 0.1); /* Легкая подсветка фона */
+}
+
+.member-info h3 {
+    margin-bottom: 10px;
+    font-size: 1.5em;
+}
+
+.member-info p {
+    font-size: 1em;
+    line-height: 1.6;
+    padding-left: 30px;
+}
+
+.expand-button {
+    position: absolute;
+    bottom: 10px;
+    right: 10px;
+    cursor: pointer;
+    font-size: 1.5em;
+    display: none; /* Скрываем стрелку в десктопной версии */
+}
+
+@media (max-width: 768px) {
+    .team-member {
+        width: 100%;
+        margin-left: 0 !important; /* Отключаем отступы в мобильной версии */
+    }
+
+    .member-info {
+        padding: 15px;
+    }
+
+    .member-info h3 {
+        margin-bottom: 5px;
+    }
+
+    .member-info p {
+        padding-left: 15px;
+        display: none; /* Скрываем описание в мобильной версии */
+    }
+
+    .member-info.expanded p {
+        display: block; /* Показываем описание при раскрытии */
+    }
+
+    .expand-button {
+        display: block; /* Показываем стрелку в мобильной версии */
+    }
+}
+
+
+/* Блок "Как с нами связаться" */
+.contact-section {
+    background-color: #181414; /* Темный фон */
+    color: white; /* Белый текст */
+    padding: 50px 20px;
+    text-align: center;
+}
+
+.contact-section h2 {
+    margin-bottom: 40px;
+
+}
+
+.contact-content {
+    display: flex;
+    justify-content: space-between;
+    gap: 40px;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+.contact-text {
+    flex: 1;
+    text-align: left;
+    padding-right: 20px;
+}
+
+.contact-text p {
+    font-size: 24px;
+    line-height: 1.6;
+}
+
+.contact-form {
+    flex: 1;
+    background-color: #f3f3f3; /* Светло-серый фон */
+    padding: 30px;
+    border-radius: 20px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.contact-form h3 {
+    margin-bottom: 20px;
+    text-align: center;
+    color: #181414; /* Черный текст */
+
+}
+
+.contact-form label {
+    display: block;
+    margin-bottom: 8px;
+    font-weight: bold;
+    color: #181414; /* Черный текст */
+}
+
+.contact-form input,
+.contact-form select {
+    width: 100%;
+    padding: 12px;
+    margin-bottom: 20px;
+    border: 1px solid #ccc;
+    border-radius: 10px;
+    font-size: 16px;
+    background-color: white; /* Белый фон */
+    color: #181414; /* Черный текст */
+}
+
+.contact-form select {
+    appearance: none;
+    background-image: url("logo.png");
+    background-repeat: no-repeat;
+    background-position: right 10px center;
+    background-size: 12px;
+}
+
+.contact-form .submit-btn {
+    width: 100%;
+    padding: 18px;
+    background-color: #ff634d; /* Красный фон */
+    color: white; /* Белый текст */
+    border: none;
+    border-radius: 10px;
+    font-size: 18px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.contact-form .submit-btn:hover {
+    background-color: #e5533d; /* Темно-красный фон при наведении */
+}
+
+/* Футер */
+.footer {
+    background-color: transparent; /* Прозрачный фон */
+    color: #181414; /* Черный текст */
+    padding: 20px;
+    text-align: center;
+}
+
+.footer-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+.footer-logo img {
+    width: 200px;
+    height: auto;
+}
+
+.footer-menu {
+    display: flex;
+    gap: 20px;
+}
+
+.footer-menu a {
+    color: #181414; /* Черный текст */
+    text-decoration: none;
+    font-size: 18px;
+    transition: color 0.3s ease;
+}
+
+.footer-menu a:hover {
+    color: #ff634d; /* Красный текст при наведении */
+}
+
+.footer-phone p {
+    font-size: 18px;
+}
+
+.footer-phone a {
+    color: #ff634d; /* Красный текст */
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.footer-phone a:hover {
+    color: #e5533d; /* Темно-красный текст при наведении */
+}
+
+/* Стили для кнопки Telegram */
+.footer-telegram .telegram-button {
+    display: flex;
+    align-items: center; /* Выравниваем иконку и текст по центру */
+    background-color: #181418; /* Черный фон */
+    color: white; /* Белый текст */
+    padding: 4px 20px; /* Отступы внутри кнопки */
+    border-radius: 25px; /* Скругление углов */
+    text-decoration: none; /* Убираем подчеркивание */
+    transition: background-color 0.3s ease, transform 0.3s ease; /* Плавные переходы */
+}
+
+.footer-telegram .telegram-button:hover {
+    background-color: #333333; /* Темно-серый фон при наведении */
+    transform: scale(1.05); /* Увеличение кнопки при наведении */
+}
+
+.footer-telegram .telegram-button img {
+    width: 24px; /* Размер иконки */
+    height: 24px;
+    margin-left: 10px; /* Отступ между текстом и иконкой */
+}
+
+/* Мобильная версия */
+@media (max-width: 768px) {
+    .contact-content {
+        flex-direction: column; /* Текст и форма вертикально */
+        gap: 20px;
+    }
+
+    .contact-text {
+        padding-right: 0;
+        text-align: center;
+    }
+
+    .contact-form {
+        max-width: 100%; /* Форма на всю ширину */
+    }
+
+    .footer-content {
+        flex-direction: column; /* Элементы футера вертикально */
+        gap: 20px;
+    }
+
+    .footer-menu {
+        flex-direction: column; /* Меню вертикально */
+        gap: 10px;
+    }
+
+    .footer-telegram .telegram-button {
+        padding: 8px 16px; /* Уменьшаем отступы для мобильных */
+        font-size: 16px; /* Уменьшаем размер текста */
+    }
+
+    .footer-telegram .telegram-button img {
+        width: 20px; /* Уменьшаем размер иконки */
+        height: 20px;
+    }
+}
