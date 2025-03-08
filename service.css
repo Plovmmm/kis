@@ -26,7 +26,7 @@ body {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 20px 30px; /* Увеличиваем отступы */
+    padding: 0px 15px; /* Увеличиваем отступы */
     box-shadow: 0 2px 5px rgba(0,0,0,0.3);
     z-index: 1000;
     height: 55px; /* Увеличиваем высоту навигационной панели */
