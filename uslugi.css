@@ -51,9 +51,10 @@
     position: absolute;
     top: 0;
     right: 0;
+    margin-top: 14%;
     width: 50%; /* Картинка занимает правую половину */
-    height: 100%;
-    object-fit: cover; /* Изображение заполняет блок */
+    height: 74%;
+    object-fit: contain; /* Изображение заполняет блок */
     opacity: 0.8;
     transition: opacity 0.35s, transform 0.35s;
 }

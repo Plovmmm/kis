@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Boostmarket</title>
+    <link rel="shortcut icon" href="img/logo_ico.png" type="image/x-icon">
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="uslugi.css">
     <link rel="stylesheet" href="slider.css">
@@ -37,8 +38,8 @@
 
     <!-- Кнопка "Оставить заявку" -->
     <div class="header-buttons">
-        <a href="#services" class="button service-button">Выбрать услугу</a>
         <button class="button request-button" onclick="openForm()">Оставить заявку</button>
+        <a href="#services" class="button service-button">Выбрать услугу</a>
     </div>
 
     <!-- Всплывающее окно с формой -->
@@ -67,20 +68,20 @@
     </div>
 
     <div class="services" id="services">
-        <h2>НАШИ УСЛУГИ <span class="vertical-line"></span> пакеты продвижения для каждого</h2>
+        <h2>НАШИ УСЛУГИ <span class="vertical-line"></span> <span>пакеты продвижения для каждого</span></h2>
         <div class="hover-text-one">
             <!-- Первая картинка -->
             <figure class="effect-text-three">
-                <img src="img/key.jpg" alt="Для новичков"/>
+                <img src="img/key.png" alt="Для новичков"/>
                 <figcaption>
-                    <h3>Для новичков</h3>
+                    <h3>Ведение кабинета под ключ</h3>
                     <p>Мы поможем вам начать продажи на маркетплейсах с нуля!</p>
                     <a href="service.html" class="details-button">Подробнее →</a>
                 </figcaption>
             </figure>
             <!-- Вторая картинка -->
             <figure class="effect-text-four">
-                <img src="img/molniya.jpg" alt="Для опытных"/>
+                <img src="img/molniya.png" alt="Для опытных"/>
                 <figcaption>
                     <h3>Для тех кто уже продаёт</h3>
                     <p>Мы поможем вам увеличить продажи и оптимизировать процессы!</p>
@@ -92,7 +93,7 @@
 
     <!--слайдер кейсы-->
     <div class="cases" id="cases">
-        <h2>КЕЙСЫ</h2>
+        <h2>КЕЙСЫ, КОТОРЫЕ МЫ ПРЕДЛАГАЕМ</h2>
         <div class="slider">
             <div class="slider-wrapper">
                 <div class="slide">
@@ -152,10 +153,12 @@
         </div>
     </div>
 
-<div class="contact" id="contact">
+<div class="contact-section" id="contact">
     <h2>КАК С НАМИ СВЯЗАТЬСЯ?</h2>
     <div class="contact-content">
-        <!-- Форма -->
+        <div class="contact-text">
+            <p>Каждый продавец – это индивидуальность, и в каждом случае спектр нашего сотрудничества может варьироваться. Заполните форму, и мы скоро с вами свяжемся.</p>
+        </div>
         <div class="contact-form">
             <h3>Оставьте заявку</h3>
             <form id="contactForm">
@@ -176,28 +179,29 @@
                 <button type="submit" class="submit-btn">Отправить</button>
             </form>
         </div>
-
-        <!-- Правая часть с логотипом, меню и контактами -->
-        <div class="contact-info">
-            <div class="contact-logo">
-                <img src="img/logo.jpg" alt="Логотип Boostmarket">
-            </div>
-            <div class="contact-menu">
-                <a href="#cases">кейсы</a>
-                <a href="#services">услуги</a>
-                <a href="#team">команда</a>
-            </div>
-            <div class="contact-phone">
-                <p>Телефон: <a href="tel:+79999999999">+7 (999) 999-99-99</a></p>
-            </div>
-            <div class="contact-telegram">
-                <a href="https://t.me/boostmarket57" target="_blank">
-                    <p>Telegram канал компании: </p><img src="img/tg.png" alt="Telegram">
-                </a>
-            </div>
-        </div>
     </div>
 </div>
+
+<footer class="footer">
+    <div class="footer-content">
+        <div class="footer-logo">
+            <img src="img/logo.jpg" alt="Логотип Boostmarket">
+        </div>
+        <div class="footer-menu">
+            <a href="#cases">кейсы</a>
+            <a href="#services">услуги</a>
+            <a href="#team">команда</a>
+        </div>
+        <div class="footer-phone">
+            <p>Телефон: <a href="tel:+79999999999">+7 (999) 999-99-99</a></p>
+        </div>
+        <div class="footer-telegram">
+            <a class="telegram-button" href="https://t.me/boostmarket57" target="_blank">
+                <p>Telegram-канал компании </p><img src="img/tg.png" alt="Telegram">
+            </a>
+        </div>
+    </div>
+</footer>
 
 </body>
 </html>

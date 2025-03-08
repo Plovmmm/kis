@@ -92,13 +92,16 @@ body {
 /* шапка */
 /* Основные стили для шапки */
 .header {
-    margin-top: 90px; /* Отступ от фиксированной навигационной панели */
+    margin-top: 10px; /* Отступ от фиксированной навигационной панели */
     display: flex;
     justify-content: space-between; /* Распределяем пространство между текстом и картинкой */
     align-items: center; /* Выравниваем элементы по центру по вертикали */
     padding: 40px 30px;
-    margin-left: 7%;
     box-sizing: border-box; /* Учитываем padding в общей ширине */
+    max-width: 1600px; /* Ограничиваем максимальную ширину шапки */
+    margin: 0 auto; /* Центрируем шапку на странице */
+    width: 100%; /* Шапка занимает всю доступную ширину */
+   
 }
 
 .header-text {
@@ -107,18 +110,20 @@ body {
 }
 
 .header-image {
-    width: 35%; /* Уменьшаем ширину картинки */
+    width: 45%; /* Уменьшаем ширину картинки */
     height: auto; /* Сохраняем пропорции */
-    margin-left: 20px;
+    margin-left: 30px;
     margin-right: 20px; /* Отступ между текстом и картинкой */
     margin-bottom: -20px;
-    margin-top: -10px;
+    margin-top: 20px;
 }
 
 .header h2 {
-    font-size: 60px; /* Увеличиваем размер шрифта */
+    margin-left:30px;
+    font-size: 4.5vw; /* Размер шрифта зависит от ширины экрана */
     line-height: 1.4;
     text-align: left;
+    max-width: 800px; /* Ограничиваем максимальную ширину текста */
 }
 
 .header h2 span {
@@ -136,7 +141,7 @@ body {
 /* Медиа-запрос для планшетов и небольших десктопов */
 @media (max-width: 1024px) {
     .header h2 {
-        font-size: 48px; /* Уменьшаем размер шрифта */
+        font-size: 48px; /* Фиксированный размер шрифта для планшетов */
     }
 
     .header-image {
@@ -151,7 +156,10 @@ body {
         flex-direction: column; /* Меняем направление на вертикальное */
         align-items: flex-start; /* Выравниваем текст по левому краю */
         padding: 20px 15px; /* Уменьшаем отступы */
-        margin-left: 5px; /* Убираем отступ слева */
+        margin-left: 10%; /* Убираем отступ слева */
+        padding-top: 40px;
+        padding-bottom: 0;
+        margin-bottom: 0;
     }
 
     .header-text {
@@ -159,21 +167,29 @@ body {
     }
 
     .header h2 {
-        font-size: 38px; /* Уменьшаем размер шрифта для мобильных */
+        font-size: 34px; /* Уменьшаем размер шрифта для мобильных */
         line-height: 1.2; /* Уменьшаем межстрочный интервал */
         text-align: left; /* Выравниваем текст по левому краю */
+        margin-top: 20px;
+        margin-bottom: 0;
     }
 
     .header-image {
-        width: 80%; /* Картинка занимает всю ширину */
-        margin-top: 20px; /* Отступ между текстом и картинкой */
+        width: 100%; /* Картинка занимает всю ширину */
+        margin-top: 0; /* Отступ между текстом и картинкой */
         margin-left: 10px; /* Убираем отступ слева */
         margin: 20px auto; /* Центрируем картинку */
     }
+}
 
+/* Медиа-запрос для очень больших экранов */
+@media (min-width: 1600px) {
+    .header h2 {
+        font-size: 72px; /* Фиксированный размер шрифта для очень больших экранов */
+    }
 }
 /* подшапочные кнопки */
-/* Стили для контейнера кнопок */
+/* Контейнер для кнопок */
 .header-buttons {
     display: flex;
     justify-content: center; /* Центрируем кнопки по горизонтали */
@@ -184,26 +200,29 @@ body {
 /* Общие стили для кнопок */
 .button {
     text-align: center;
-    font-size: 24px; /* Уменьшаем размер шрифта */
-    padding: 20px 50px; /* Уменьшаем размеры кнопки */
+    font-size: 24px; /* Размер шрифта */
+    padding: 20px 50px; /* Размеры кнопки */
     border: none; /* Убираем рамку */
     border-radius: 25px; /* Скругление краёв */
     cursor: pointer; /* Меняем курсор при наведении */
     transition: background-color 0.3s, transform 0.2s; /* Плавные переходы */
     text-decoration: none; /* Убираем подчеркивание у ссылки */
     display: inline-block; /* Центрируем кнопку */
+    width: auto; /* Автоматическая ширина */
 }
 
 /* Стили для кнопки "Выбрать услугу" */
 .service-button {
     background-color: #f3f3f3; /* Цвет кнопки */
     color: #181414; /* Цвет текста кнопки */
+    order: 1; /* На компьютере эта кнопка будет справа */
 }
 
 /* Стили для кнопки "Оставить заявку" */
 .request-button {
     background-color: #ff634d; /* Цвет кнопки */
     color: white; /* Цвет текста кнопки */
+    order: 2; /* На компьютере эта кнопка будет слева */
 }
 
 /* Эффекты при наведении */
@@ -215,19 +234,29 @@ body {
     background-color: #e5533d; /* Изменение цвета при наведении */
 }
 
+/* Эффекты при нажатии */
+.service-button:active {
+    transform: scale(0.95); /* Уменьшение размера при нажатии */
+}
+
+.request-button:active {
+    transform: scale(0.95); /* Уменьшение размера при нажатии */
+}
 
 /* Медиа-запрос для мобильных устройств */
 @media (max-width: 768px) {
     .header-buttons {
         flex-direction: column; /* Кнопки вертикально */
-        align-items: center; /* Центрируем кнопки */
+        align-items: stretch; /* Растягиваем кнопки на всю ширину */
         gap: 15px; /* Расстояние между кнопками */
     }
 
     .button {
-        width: 90%; /* Увеличиваем ширину кнопок */
-        font-size: 20px; /* Увеличиваем размер шрифта */
-        padding: 15px 20px; /* Увеличиваем отступы внутри кнопок */
+        width: 100%; /* Кнопки занимают всю ширину */
+        font-size: 20px; /* Размер шрифта */
+        padding: 15px 20px; /* Размеры кнопки */
+        box-sizing: border-box; /* Учитываем padding в общей ширине */
+        order: 0; /* Сбрасываем порядок для мобильной версии */
     }
 }
 
@@ -268,7 +297,7 @@ body {
 
 h2 {
     text-align: center;
-    font-size: 48px;
+    font-size: 38px;
 }
 
 .service-block {
@@ -288,6 +317,11 @@ h2 {
     text-align: center;
     font-size: 48px;
     margin-bottom: 40px;
+}
+.services h2 span {
+    
+    font-size: 36px;
+    
 }
 
 .service-block {
@@ -514,31 +548,42 @@ h2 {
 }
 
 
-/* Стили для раздела контактов */
-.contact {
+/* Блок "Как с нами связаться" */
+.contact-section {
+    background-color: #181414; /* Темный фон */
+    color: white; /* Белый текст */
     padding: 50px 20px;
     text-align: center;
-    max-width: 1200px;
-    margin: 0 auto;
 }
 
-.contact h2 {
+.contact-section h2 {
     margin-bottom: 40px;
-    font-size: 2em;
+
 }
 
 .contact-content {
     display: flex;
     justify-content: space-between;
     gap: 40px;
-    margin-top: 20px;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
 }
 
-/* Форма */
+.contact-text {
+    flex: 1;
+    text-align: left;
+    padding-right: 20px;
+}
+
+.contact-text p {
+    font-size: 24px;
+    line-height: 1.6;
+}
+
 .contact-form {
     flex: 1;
-    max-width: 800px; /* Форма стала еще шире */
-    background-color: #c5a5ff;
+    background-color: #f3f3f3; /* Светло-серый фон */
     padding: 30px;
     border-radius: 20px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
@@ -547,14 +592,15 @@ h2 {
 .contact-form h3 {
     margin-bottom: 20px;
     text-align: center;
-    color: #181414;
+    color: #181414; /* Черный текст */
+
 }
 
 .contact-form label {
     display: block;
     margin-bottom: 8px;
     font-weight: bold;
-    color: #181414;
+    color: #181414; /* Черный текст */
 }
 
 .contact-form input,
@@ -565,8 +611,8 @@ h2 {
     border: 1px solid #ccc;
     border-radius: 10px;
     font-size: 16px;
-    background-color: #f4f4f4;
-    color: #181414;
+    background-color: white; /* Белый фон */
+    color: #181414; /* Черный текст */
 }
 
 .contact-form select {
@@ -579,9 +625,9 @@ h2 {
 
 .contact-form .submit-btn {
     width: 100%;
-    padding: 12px;
-    background-color: #ff634d;
-    color: white;
+    padding: 18px;
+    background-color: #ff634d; /* Красный фон */
+    color: white; /* Белый текст */
     border: none;
     border-radius: 10px;
     font-size: 18px;
@@ -590,97 +636,117 @@ h2 {
 }
 
 .contact-form .submit-btn:hover {
-    background-color: #e5533d;
+    background-color: #e5533d; /* Темно-красный фон при наведении */
 }
 
-/* Правая часть с логотипом, меню и контактами */
-.contact-info {
-    flex: 1;
-    max-width: 400px;
-    padding: 30px;
+/* Футер */
+.footer {
+    background-color: transparent; /* Прозрачный фон */
+    color: #181414; /* Черный текст */
+    padding: 20px;
     text-align: center;
 }
 
-.contact-logo img {
-    width: 150px;
-    height: auto;
-    margin-bottom: 20px;
-}
-
-.contact-menu {
+.footer-content {
     display: flex;
-    flex-direction: column;
-    gap: 10px;
-    margin-bottom: 20px;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
 }
 
-.contact-menu a {
-    color: #181414;
+.footer-logo img {
+    width: 200px;
+    height: auto;
+}
+
+.footer-menu {
+    display: flex;
+    gap: 20px;
+}
+
+.footer-menu a {
+    color: #181414; /* Черный текст */
     text-decoration: none;
     font-size: 18px;
     transition: color 0.3s ease;
 }
 
-.contact-menu a:hover {
-    color: #ff634d;
+.footer-menu a:hover {
+    color: #ff634d; /* Красный текст при наведении */
 }
 
-.contact-phone {
-    margin-bottom: 20px;
-}
-
-.contact-phone p {
+.footer-phone p {
     font-size: 18px;
-    color: #181414;
 }
 
-.contact-phone a {
-    color: #ff634d;
+.footer-phone a {
+    color: #ff634d; /* Красный текст */
     text-decoration: none;
     transition: color 0.3s ease;
 }
 
-.contact-phone a:hover {
-    color: #e5533d;
+.footer-phone a:hover {
+    color: #e5533d; /* Темно-красный текст при наведении */
 }
 
-.contact-telegram img {
-    width: 40px;
-    height: 40px;
-    transition: transform 0.3s ease;
+/* Стили для кнопки Telegram */
+.footer-telegram .telegram-button {
+    display: flex;
+    align-items: center; /* Выравниваем иконку и текст по центру */
+    background-color: #181418; /* Черный фон */
+    color: white; /* Белый текст */
+    padding: 4px 20px; /* Отступы внутри кнопки */
+    border-radius: 25px; /* Скругление углов */
+    text-decoration: none; /* Убираем подчеркивание */
+    transition: background-color 0.3s ease, transform 0.3s ease; /* Плавные переходы */
 }
 
-.contact-telegram img:hover {
-    transform: scale(1.1);
+.footer-telegram .telegram-button:hover {
+    background-color: #333333; /* Темно-серый фон при наведении */
+    transform: scale(1.05); /* Увеличение кнопки при наведении */
+}
+
+.footer-telegram .telegram-button img {
+    width: 24px; /* Размер иконки */
+    height: 24px;
+    margin-left: 10px; /* Отступ между текстом и иконкой */
 }
 
 /* Мобильная версия */
 @media (max-width: 768px) {
     .contact-content {
-        flex-direction: column; /* Форма и информация вертикально */
+        flex-direction: column; /* Текст и форма вертикально */
         gap: 20px;
+    }
+
+    .contact-text {
+        padding-right: 0;
+        text-align: center;
     }
 
     .contact-form {
         max-width: 100%; /* Форма на всю ширину */
     }
 
-    .contact-info {
-        max-width: 100%; /* Информация на всю ширину */
-        padding: 20px;
-    }
-
-    .contact-menu {
-        flex-direction: row; /* Меню горизонтально */
-        justify-content: center;
+    .footer-content {
+        flex-direction: column; /* Элементы футера вертикально */
         gap: 20px;
     }
 
-    .contact-logo img {
-        width: 120px; /* Уменьшаем логотип для мобильных */
+    .footer-menu {
+        flex-direction: column; /* Меню вертикально */
+        gap: 10px;
     }
 
-    .contact-phone p {
+    .footer-telegram .telegram-button {
+        padding: 8px 16px; /* Уменьшаем отступы для мобильных */
         font-size: 16px; /* Уменьшаем размер текста */
+    }
+
+    .footer-telegram .telegram-button img {
+        width: 20px; /* Уменьшаем размер иконки */
+        height: 20px;
     }
 }
