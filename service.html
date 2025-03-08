@@ -1,48 +1,98 @@
 <!DOCTYPE html>
 <html lang="ru">
-  <head>
-    <meta charset="utf-8">
+<head>
+    <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Заголовок страницы</title>
-    <link rel="stylesheet" href="./styles/style.css">
+    <title>Бизнес Компания</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+            color: #333;
+        }
+        header {
+            background-color: #007BFF;
+            color: white;
+            padding: 20px 0;
+            text-align: center;
+        }
+        nav {
+            background-color: #333;
+            color: white;
+            padding: 10px;
+            text-align: center;
+        }
+        nav a {
+            color: white;
+            margin: 0 15px;
+            text-decoration: none;
+        }
+        nav a:hover {
+            text-decoration: underline;
+        }
+        .container {
+            width: 80%;
+            margin: 20px auto;
+            padding: 20px;
+            background-color: white;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        h1, h2 {
+            color: #007BFF;
+        }
+        footer {
+            background-color: #333;
+            color: white;
+            text-align: center;
+            padding: 10px 0;
+            margin-top: 20px;
+        }
+        .services, .about, .contact {
+            margin-bottom: 20px;
+        }
+        .services h2, .about h2, .contact h2 {
+            border-bottom: 2px solid #007BFF;
+            padding-bottom: 10px;
+        }
+    </style>
+</head>
+<body>
 
-    <meta property="og:title" content="Заголовок страницы в OG">
-    <meta property="og:description" content="Описание страницы в OG">
-    <meta property="og:image" content="https://example.com/image.jpg">
-    <meta property="og:url" content="https://example.com/">
-  </head>
-  <body>
     <header>
-      <h1>Личный сайт</h1>
-      <p>Который сделан на основе готового шаблона</p>
-      <nav>
-        <ul>
-          <li><a href="index.html">Эта страница</a></li>
-          <li><a href="catalog.html">Другая страница</a></li>
-        </ul>
-      </nav>
+        <h1>Бизнес Компания</h1>
+        <p>Ваш надежный партнер в бизнесе</p>
     </header>
-    <main>
-      <article>
-        <section>
-          <h2>Первая секция</h2>
-          <p>Она обо мне</p>
-          <img src="images/image.png" alt="Человек и пароход">
-          <p>Но может быть и о семантике, я пока не решил.</p>
+
+    <nav>
+        <a href="#services">Услуги</a>
+        <a href="#about">О нас</a>
+        <a href="#contact">Контакты</a>
+    </nav>
+
+    <div class="container">
+        <section id="services" class="services">
+            <h2>Наши Услуги</h2>
+            <p>Мы предлагаем широкий спектр услуг для вашего бизнеса, включая консалтинг, маркетинг и финансовое планирование.</p>
         </section>
-        <section>
-          <h2>Вторая секция</h2>
-          <p>Она тоже обо мне</p>
+
+        <section id="about" class="about">
+            <h2>О Нас</h2>
+            <p>Мы - команда профессионалов, готовых помочь вашему бизнесу достичь новых высот. Наш опыт и знания - ваш успех.</p>
         </section>
-        <section>
-          <h2>И третья</h2>
-          <p>Вы уже должны были начать догадываться.</p>
+
+        <section id="contact" class="contact">
+            <h2>Контакты</h2>
+            <p>Свяжитесь с нами для получения дополнительной информации:</p>
+            <p>Телефон: +7 (123) 456-78-90</p>
+            <p>Email: info@businesscompany.com</p>
         </section>
-      </article>
-    </main>
+    </div>
+
     <footer>
-      <p>Сюда бы я вписал информацию об авторе и ссылки на другие сайты</p>
+        <p>&copy; 2023 Бизнес Компания. Все права защищены.</p>
     </footer>
-    <!-- сюда можно подключить jquery <script src="scripts/app.js" defer></script> -->
-  </body>
+
+</body>
 </html>
