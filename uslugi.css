@@ -87,12 +87,12 @@
 
 .hover-text-one figure p {
     letter-spacing: 1px;
-    font-size: 18px; /* Увеличиваем размер текста */
+    font-size: 17px; /* Увеличиваем размер текста */
     margin: 0;
     opacity: 0;
     position: absolute;
     left: 30px;
-    top: 140px; /* Поднимаем текст выше, чтобы не перекрывался полоской */
+    top: 135px; /* Поднимаем текст выше, чтобы не перекрывался полоской */
     width: 80%; /* Ограничиваем ширину текста */
     transition: opacity 0.35s, transform 0.35s;
     transform: translate3d(0, 100%, 0);
