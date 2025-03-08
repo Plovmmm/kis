@@ -43,8 +43,9 @@ body {
 .navbar .menu a {
     color: #181414;
     text-decoration: none;
-    font-size: 22px; /* Увеличиваем размер шрифта */
-    font-weight: 500; /* Делаем шрифт немного жирнее */
+    font-size: 22px;
+    font-weight: 500;
+
 }
 
 .navbar .menu a:last-child {
@@ -67,24 +68,24 @@ body {
     }
 
     .navbar .menu {
-        display: none; /* Скрываем меню на мобильных */
+        display: none;
         flex-direction: column;
         position: absolute;
         top: 100%;
         left: 0;
         right: 0;
         background-color: white;
-        padding: 15px; /* Увеличиваем отступы внутри меню */
-        box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        padding: 15px;
+        box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
     }
 
     .navbar .menu.active {
-        display: flex; /* Показываем меню, когда оно активно */
+        display: flex;
     }
 
     .navbar .menu a {
-        font-size: 20px; /* Уменьшаем размер шрифта для мобильных */
-        padding: 10px 0; /* Добавляем отступы между ссылками */
+        font-size: 20px;
+        padding: 10px 0;
     }
 }
 
@@ -106,14 +107,16 @@ body {
 }
 
 .header-image {
-    width: 39%; /* Фиксированная ширина картинки (пропорционально тексту) */
+    width: 35%; /* Уменьшаем ширину картинки */
     height: auto; /* Сохраняем пропорции */
-    margin-left: 20px; /* Отступ между текстом и картинкой */
-    margin-top: 20px;
+    margin-left: 20px;
+    margin-right: 20px; /* Отступ между текстом и картинкой */
+    margin-bottom: -20px;
+    margin-top: -10px;
 }
 
 .header h2 {
-    font-size: 52px;
+    font-size: 60px; /* Увеличиваем размер шрифта */
     line-height: 1.4;
     text-align: left;
 }
@@ -133,12 +136,12 @@ body {
 /* Медиа-запрос для планшетов и небольших десктопов */
 @media (max-width: 1024px) {
     .header h2 {
-        font-size: 42px; /* Уменьшаем размер шрифта */
+        font-size: 48px; /* Уменьшаем размер шрифта */
     }
 
     .header-image {
         margin-left: 10px;
-        width: 30%; /* Увеличиваем ширину картинки */
+        width: 45%; /* Увеличиваем ширину картинки */
     }
 }
 
@@ -162,10 +165,12 @@ body {
     }
 
     .header-image {
-        width: 90%; /* Картинка занимает всю ширину */
+        width: 80%; /* Картинка занимает всю ширину */
         margin-top: 20px; /* Отступ между текстом и картинкой */
         margin-left: 10px; /* Убираем отступ слева */
+        margin: 20px auto; /* Центрируем картинку */
     }
+
 }
 /* подшапочные кнопки */
 /* Стили для контейнера кнопок */
@@ -173,14 +178,14 @@ body {
     display: flex;
     justify-content: center; /* Центрируем кнопки по горизонтали */
     gap: 40px; /* Расстояние между кнопками */
-    margin-top: 20px; /* Отступ сверху */
+    margin-top: 10px; /* Отступ сверху */
 }
 
 /* Общие стили для кнопок */
 .button {
     text-align: center;
-    font-size: 32px; /* Размер шрифта */
-    padding: 30px 60px; /* Размеры кнопки */
+    font-size: 24px; /* Уменьшаем размер шрифта */
+    padding: 20px 50px; /* Уменьшаем размеры кнопки */
     border: none; /* Убираем рамку */
     border-radius: 25px; /* Скругление краёв */
     cursor: pointer; /* Меняем курсор при наведении */
@@ -210,35 +215,25 @@ body {
     background-color: #e5533d; /* Изменение цвета при наведении */
 }
 
-/* Эффекты при нажатии */
-.service-button:active {
-    transform: scale(0.95); /* Уменьшение размера при нажатии */
-}
-
-.request-button:active {
-    transform: scale(0.95); /* Уменьшение размера при нажатии */
-}
 
 /* Медиа-запрос для мобильных устройств */
 @media (max-width: 768px) {
     .header-buttons {
-        flex-direction: column; /* Кнопки располагаются вертикально */
-        align-items: stretch; /* Растягиваем кнопки на всю ширину */
-        gap: 10px; /* Уменьшаем расстояние между кнопками */
+        flex-direction: column; /* Кнопки вертикально */
+        align-items: center; /* Центрируем кнопки */
+        gap: 15px; /* Расстояние между кнопками */
     }
 
     .button {
-        width: 90%; /* Кнопки занимают всю ширину */
-        font-size: 28px; /* Уменьшаем размер шрифта */
-        padding: 20px 15px; /* Уменьшаем размеры кнопки */
-        margin-left: 5%;
-        box-sizing: border-box; /* Учитываем padding в общей ширине */
-
+        width: 90%; /* Увеличиваем ширину кнопок */
+        font-size: 20px; /* Увеличиваем размер шрифта */
+        padding: 15px 20px; /* Увеличиваем отступы внутри кнопок */
     }
 }
 
 /* uslugi */
 .services {
+    margin-top: 50px; /* Отступ сверху */
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -415,35 +410,277 @@ h2 {
 }
 
 
-
-/* Блок Наши сотрудники */
-.employees {
-    background-color: white;
-    padding: 20px;
+/*сотрудники */
+.team {
+    padding: 50px 20px;
+    text-align: center;
+    max-width: 1200px; /* Ограничиваем ширину контейнера */
+    margin: 0 auto; /* Центрируем контейнер */
 }
 
-.employee-content {
+.team h2 {
+    margin-bottom: 40px;
+    font-size: 2em;
+}
+
+.team-member {
+    margin-bottom: 30px;
+    opacity: 0;
+    transform: translateX(100px);
+    transition: opacity 1.5s ease-out, transform 1.5s ease-out;
+    width: 90%; /* Ширина блоков */
+    position: relative;
+}
+
+.team-member.visible {
+    opacity: 1;
+    transform: translateX(0);
+}
+
+/* Отступы для лесенки */
+.team-member:nth-child(2) {
+    margin-left: 120px; /* Первый блок с отступом 90px */
+}
+
+.team-member:nth-child(3) {
+    margin-left: 60px; /* Второй блок с отступом 30px */
+}
+
+.team-member:nth-child(4) {
+    margin-left: 0; /* Третий блок без отступа */
+}
+
+.member-info {
     padding: 20px;
-    background-color: #c5a5ff;
     border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    text-align: left;
+    position: relative;
+    transition: transform 0.3s ease, box-shadow 0.3s ease; /* Плавные переходы */
 }
 
-/* Блок Как с нами связаться? */
+.member-info:hover {
+    transform: scale(1.05); /* Увеличение блока */
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2); /* Увеличение тени */
+    background-color: rgba(255, 255, 255, 0.1); /* Легкая подсветка фона */
+}
+
+.member-info h3 {
+    margin-bottom: 10px;
+    font-size: 1.5em;
+}
+
+.member-info p {
+    font-size: 1em;
+    line-height: 1.6;
+    padding-left: 30px;
+}
+
+.expand-button {
+    position: absolute;
+    bottom: 10px;
+    right: 10px;
+    cursor: pointer;
+    font-size: 1.5em;
+    display: none; /* Скрываем стрелку в десктопной версии */
+}
+
+@media (max-width: 768px) {
+    .team-member {
+        width: 100%;
+        margin-left: 0 !important; /* Отключаем отступы в мобильной версии */
+    }
+
+    .member-info {
+        padding: 15px;
+    }
+
+    .member-info h3 {
+        margin-bottom: 5px;
+    }
+
+    .member-info p {
+        padding-left: 15px;
+        display: none; /* Скрываем описание в мобильной версии */
+    }
+
+    .member-info.expanded p {
+        display: block; /* Показываем описание при раскрытии */
+    }
+
+    .expand-button {
+        display: block; /* Показываем стрелку в мобильной версии */
+    }
+}
+
+
+/* Стили для раздела контактов */
 .contact {
-    padding: 20px;
+    padding: 50px 20px;
+    text-align: center;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.contact h2 {
+    margin-bottom: 40px;
+    font-size: 2em;
 }
 
 .contact-content {
     display: flex;
     justify-content: space-between;
+    gap: 40px;
+    margin-top: 20px;
 }
 
-.contact-text {
+/* Форма */
+.contact-form {
     flex: 1;
-    padding-right: 10px;
+    max-width: 800px; /* Форма стала еще шире */
+    background-color: #c5a5ff;
+    padding: 30px;
+    border-radius: 20px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
 
-.contact-image {
+.contact-form h3 {
+    margin-bottom: 20px;
+    text-align: center;
+    color: #181414;
+}
+
+.contact-form label {
+    display: block;
+    margin-bottom: 8px;
+    font-weight: bold;
+    color: #181414;
+}
+
+.contact-form input,
+.contact-form select {
+    width: 100%;
+    padding: 12px;
+    margin-bottom: 20px;
+    border: 1px solid #ccc;
+    border-radius: 10px;
+    font-size: 16px;
+    background-color: #f4f4f4;
+    color: #181414;
+}
+
+.contact-form select {
+    appearance: none;
+    background-image: url("logo.png");
+    background-repeat: no-repeat;
+    background-position: right 10px center;
+    background-size: 12px;
+}
+
+.contact-form .submit-btn {
+    width: 100%;
+    padding: 12px;
+    background-color: #ff634d;
+    color: white;
+    border: none;
+    border-radius: 10px;
+    font-size: 18px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.contact-form .submit-btn:hover {
+    background-color: #e5533d;
+}
+
+/* Правая часть с логотипом, меню и контактами */
+.contact-info {
     flex: 1;
-    text-align: right;
+    max-width: 400px;
+    padding: 30px;
+    text-align: center;
+}
+
+.contact-logo img {
+    width: 150px;
+    height: auto;
+    margin-bottom: 20px;
+}
+
+.contact-menu {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    margin-bottom: 20px;
+}
+
+.contact-menu a {
+    color: #181414;
+    text-decoration: none;
+    font-size: 18px;
+    transition: color 0.3s ease;
+}
+
+.contact-menu a:hover {
+    color: #ff634d;
+}
+
+.contact-phone {
+    margin-bottom: 20px;
+}
+
+.contact-phone p {
+    font-size: 18px;
+    color: #181414;
+}
+
+.contact-phone a {
+    color: #ff634d;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.contact-phone a:hover {
+    color: #e5533d;
+}
+
+.contact-telegram img {
+    width: 40px;
+    height: 40px;
+    transition: transform 0.3s ease;
+}
+
+.contact-telegram img:hover {
+    transform: scale(1.1);
+}
+
+/* Мобильная версия */
+@media (max-width: 768px) {
+    .contact-content {
+        flex-direction: column; /* Форма и информация вертикально */
+        gap: 20px;
+    }
+
+    .contact-form {
+        max-width: 100%; /* Форма на всю ширину */
+    }
+
+    .contact-info {
+        max-width: 100%; /* Информация на всю ширину */
+        padding: 20px;
+    }
+
+    .contact-menu {
+        flex-direction: row; /* Меню горизонтально */
+        justify-content: center;
+        gap: 20px;
+    }
+
+    .contact-logo img {
+        width: 120px; /* Уменьшаем логотип для мобильных */
+    }
+
+    .contact-phone p {
+        font-size: 16px; /* Уменьшаем размер текста */
+    }
 }
