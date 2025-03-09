@@ -421,6 +421,10 @@ h2 {
 }
 
 @media (max-width: 768px) {
+    .team h2 {
+        font-size: 24px;
+        
+    }
     .team-member {
         width: 100%;
         margin-left: 0 !important; /* Отключаем отступы в мобильной версии */
