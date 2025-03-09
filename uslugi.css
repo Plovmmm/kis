@@ -11,19 +11,6 @@
 }
 
 /* Стили для блока услуг */
-.services {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    padding: 60px 30px;
-}
-
-.services h2 {
-    text-align: center;
-    font-size: 48px;
-    margin-bottom: 40px;
-}
-
 .hover-text-one {
     display: flex;
     justify-content: center;
@@ -51,9 +38,9 @@
     position: absolute;
     top: 0;
     right: 0;
-    margin-top: 14%;
+    margin-top: 25%;
     width: 50%; /* Картинка занимает правую половину */
-    height: 74%;
+    height: 65%;
     object-fit: contain; /* Изображение заполняет блок */
     opacity: 0.8;
     transition: opacity 0.35s, transform 0.35s;
@@ -77,7 +64,7 @@
 }
 
 .hover-text-one figure h3 {
-    font-weight: 300;
+    font-weight: 500;
     margin: 0;
     position: absolute;
     left: 30px;
@@ -169,6 +156,23 @@ figure.effect-text-four:hover h3::after {
 
 /* Стили для мобильной версии */
 @media (max-width: 768px) {
+    .services {
+        margin: 0;
+        padding-left: 0px;
+        padding-right: 0px;
+    }
+    .services h2 {
+        font-size: 32px;
+        padding-left: 5px;
+        padding-right: 5px;
+        
+    }
+
+    .services h2 span {
+        font-size: 24px;
+        line-height: 25px;
+    }
+
     .hover-text-one {
         flex-direction: column; /* Блоки располагаются вертикально */
         align-items: center; /* Центрируем блоки */
@@ -179,4 +183,16 @@ figure.effect-text-four:hover h3::after {
         max-width: none; /* Убираем ограничение по ширине */
         margin-bottom: 20px; /* Отступ между блоками */
     }
+    .hover-text-one figure img {
+        position: absolute;
+        top: 0;
+        right: 0;
+        margin-top: 60%;
+        width: 50%; /* Картинка занимает правую половину */
+        height: 65%;
+        object-fit: contain; /* Изображение заполняет блок */
+        opacity: 0.8;
+        transition: opacity 0.35s, transform 0.35s;
+    }
+    
 }

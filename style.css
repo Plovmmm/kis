@@ -11,9 +11,19 @@ body {
     font-optical-sizing: auto;
     font-weight: 600;
     font-style: normal;
-  
+    
 }
-
+.background {
+    min-height: 100vh; /* Блок занимает всю высоту экрана */
+    background-image: url('img/gradient.jpg');
+    background-size: cover; /* Масштабирует изображение, чтобы оно покрывало весь блок */
+    background-position: center; /* Центрирует изображение */
+    background-repeat: no-repeat; /* Предотвращает повторение изображения */
+}
+h2 {
+    text-align: center;
+    font-size: 38px;
+}
 /* navigation */
 .navbar {
     position: fixed;
@@ -91,6 +101,7 @@ body {
 
 /* шапка */
 .header {
+    min-height: 80vh; /* Блок занимает всю высоту экрана */
     margin-top: 60px; /* Отступ от фиксированной навигационной панели */
     display: flex;
     justify-content: space-between; /* Распределяем пространство между текстом и картинкой */
@@ -100,6 +111,8 @@ body {
     max-width: 1600px; /* Ограничиваем максимальную ширину шапки */
     margin: 0 auto; /* Центрируем шапку на странице */
     width: 100%; /* Шапка занимает всю доступную ширину */
+    
+    /* Предотвращает повторение изображения */
 }
 
 .header-text {
@@ -167,9 +180,9 @@ body {
     .header h2 {
         font-size: 24px; /* Уменьшаем размер шрифта для мобильных */
         line-height: 1.2; /* Уменьшаем межстрочный интервал */
-        text-align: left; /* Выравниваем текст по левому краю */
+        text-align: center; /* Выравниваем текст по левому краю */
         margin-top: 20px;
-        margin-bottom: 10px;
+        margin-bottom: 0px;
         margin-left: 0; /* Убираем отступ слева */
     }
 
@@ -192,13 +205,14 @@ body {
     justify-content: center; /* Центрируем кнопки по горизонтали */
     gap: 40px; /* Расстояние между кнопками */
     margin-top: 10px; /* Отступ сверху */
+    
 }
 
 /* Общие стили для кнопок */
 .button {
     text-align: center;
     font-size: 24px; /* Размер шрифта */
-    padding: 20px 50px; /* Размеры кнопки */
+    padding: 20px 13vh; /* Размеры кнопки */
     border: none; /* Убираем рамку */
     border-radius: 25px; /* Скругление краёв */
     cursor: pointer; /* Меняем курсор при наведении */
@@ -246,6 +260,7 @@ body {
         flex-direction: column; /* Кнопки вертикально */
         align-items: center; /* Растягиваем кнопки на всю ширину */
         gap: 15px; /* Расстояние между кнопками */
+        padding-bottom: 20px;
     }
 
     .button {
@@ -259,11 +274,22 @@ body {
 
 /* uslugi */
 .services {
-    margin-top: 50px; /* Отступ сверху */
+    margin-top: 0px; /* Отступ сверху */
     display: flex;
     flex-direction: column;
     align-items: center;
     padding: 60px 30px;
+    padding-top: 10px;
+}
+.services h2 {
+    text-align: center;
+    font-size: 48px;
+    margin-bottom: 30px;
+}
+.services h2 span {
+    
+    font-size: 32px;
+    
 }
 .services h3 {
     font-size: 28px;
@@ -278,12 +304,6 @@ body {
     background-color: #ff634d;
     margin: 10px auto;
 }
-.services h4 {
-    font-size: 18px;
-    color: #181414;
-    text-align: center;
-}
-
 .vertical-line {
     display: inline-block; /* Чтобы элемент можно было располагать среди текста */
     width: 2px;            /* Ширина черточки */
@@ -291,36 +311,6 @@ body {
     background-color: #ff634d; /* Оранжевый цвет */
     margin: 0 10px;       /* Отступы вокруг черточки (по необходимости) */
 }
-
-h2 {
-    text-align: center;
-    font-size: 38px;
-}
-
-.service-block {
-    display: flex;
-    margin: 20px 0;
-}
-
-/* Блок Услуги */
-.services {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    padding: 60px 30px;
-}
-
-.services h2 {
-    text-align: center;
-    font-size: 48px;
-    margin-bottom: 40px;
-}
-.services h2 span {
-    
-    font-size: 36px;
-    
-}
-
 .service-block {
     display: flex;
     justify-content: center;
@@ -329,93 +319,6 @@ h2 {
     max-width: 800px; /* Ограничиваем ширину блока услуг */
     margin: 0 auto;
 }
-
-.service-left, .service-right {
-    flex: 1;
-    padding: 20px;
-    border-radius: 10px;
-    color: white;
-    transition: transform 0.3s ease, box-shadow 0.3s ease, width 0.3s ease;
-    width: 40%; /* Уменьшаем ширину блоков */
-    max-width: 400px; /* Максимальная ширина */
-    cursor: pointer;
-}
-
-.service-left {
-    background-color: #c5a5ff;
-}
-
-.service-right {
-    background-color: #ff634d;
-}
-
-/* Блок Услуги */
-.services {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    padding: 60px 30px;
-}
-
-.services h2 {
-    text-align: center;
-    font-size: 48px;
-    margin-bottom: 40px;
-}
-
-.service-block {
-    display: flex;
-    justify-content: center;
-    gap: 20px; /* Расстояние между блоками */
-    width: 100%;
-    max-width: 800px; /* Ограничиваем ширину блока услуг */
-    margin: 0 auto;
-}
-
-.service-left, .service-right {
-    flex: 1;
-    padding: 20px;
-    border-radius: 10px;
-    color: white;
-    transition: all 0.3s ease; /* Плавные переходы для всех свойств */
-    width: 40%; /* Уменьшаем ширину блоков */
-    max-width: 400px; /* Максимальная ширина */
-    cursor: pointer;
-    position: relative; /* Для позиционирования текста */
-    overflow: hidden; /* Скрываем выходящий за пределы контент */
-}
-
-.service-left {
-    background-color: #c5a5ff;
-}
-
-.service-right {
-    background-color: #ff634d;
-}
-
-/* Блок Услуги */
-.services {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    padding: 60px 30px;
-}
-
-.services h2 {
-    text-align: center;
-    font-size: 48px;
-    margin-bottom: 40px;
-}
-
-.service-block {
-    display: flex;
-    justify-content: center;
-    gap: 20px; /* Расстояние между блоками */
-    width: 100%;
-    max-width: 800px; /* Ограничиваем ширину блока услуг */
-    margin: 0 auto;
-}
-
 .service-left, .service-right {
     flex: 1;
     padding: 20px;
@@ -431,16 +334,18 @@ h2 {
     flex-direction: column;
     align-items: center; /* Центрируем содержимое по горизонтали */
 }
-
 .service-left {
     background-color: #c5a5ff;
 }
-
 .service-right {
     background-color: #ff634d;
 }
 
 /*сотрудники */
+.komanda {
+    background-color: #c5a5ff;
+}
+
 .team {
     padding: 50px 20px;
     text-align: center;
@@ -450,7 +355,7 @@ h2 {
 
 .team h2 {
     margin-bottom: 40px;
-    font-size: 2em;
+    
 }
 
 .team-member {
