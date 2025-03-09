@@ -7,24 +7,30 @@ const slider = document.querySelector('.slider');
 const sliderWrapper = document.querySelector('.slider-wrapper');
 
 // Устанавливаем размеры слайдера и обертки
-slider.style.width = '100%';
-slider.style.height = '600px'; // Высота для десктопной версии
+slider.style.width = '80%'; 
+slider.style.height = window.innerWidth <= 768 ? '320px' : window.innerWidth >= 1200 ? '640px' : '480px'; // Уменьшено на 20%
 sliderWrapper.style.position = 'relative';
-sliderWrapper.style.height = '100%';
+sliderWrapper.style.height = '90%';
 
-// Задаем размеры карточек слайдов
-slides.forEach((slide, index) => {
-  const card = slide.querySelector('.slide-card');
-  card.style.width = '80%';
-  card.style.maxWidth = '600px';
-  card.style.height = '350px';
-  card.style.position = 'absolute'; // Позиционируем карточки абсолютно
-  card.style.top = '50%'; // Центрируем по вертикали
-  card.style.left = '50%'; // Центрируем по горизонтали
-  card.style.transform = `translate(-50%, -50%) translateY(${index * 50}px) translateX(${index * 60}px)`; // Начальное положение карточек
-  card.style.transition = 'transform 0.9s ease, opacity 0.9s ease'; // Плавные переходы
-  card.style.zIndex = slides.length - index; // Устанавливаем z-index для правильного порядка
-  card.style.opacity = index === 0 ? 1 : 1; // Убираем прозрачность для всех слайдов
+// Функция для обновления размеров и позиционирования слайдов
+function updateSlides() {
+  slides.forEach((slide, index) => {
+    const image = slide.querySelector('.slide-image');
+    image.style.maxWidth = window.innerWidth <= 768 ? '90%' : window.innerWidth >= 1200 ? '80%' : '70%'; // Адаптируем ширину изображения
+    image.style.maxHeight = window.innerWidth <= 768 ? '90%' : window.innerWidth >= 1200 ? '80%' : '70%'; // Адаптируем высоту изображения
+    image.style.position = 'absolute';
+    image.style.top = '50%';
+    image.style.left = '50%';
+    image.style.transform = `translate(-50%, -50%) translateY(${index * 24}px) translateX(${index * 32}px)`; // Уменьшено на 20%
+    image.style.transition = 'transform 0.9s ease';
+    image.style.zIndex = slides.length - index;
+    image.style.opacity = 1; /* Убираем прозрачность */
+  });
+}
+
+// Инициализация слайдов при загрузке страницы
+document.addEventListener('DOMContentLoaded', () => {
+  updateSlides();
 });
 
 // Функция для перестановки слайдов
@@ -44,14 +50,13 @@ async function reorderSlides(direction) {
 
   // Обновляем стили слайдов с анимацией
   slides.forEach((slide, index) => {
-    const card = slide.querySelector('.slide-card');
-    card.style.zIndex = slides.length - Math.abs(index - currentIndex); // Обновляем z-index
-    card.style.opacity = 1 - Math.abs(index - currentIndex) * 0.2; // Убираем прозрачность
-    card.style.transform = `translate(-50%, -50%) translateY(${(index - currentIndex) * 50}px) translateX(${(index - currentIndex) * 60}px)`; // Плавное перемещение
+    const image = slide.querySelector('.slide-image');
+    image.style.zIndex = slides.length - Math.abs(index - currentIndex); // Обновляем z-index
+    image.style.transform = `translate(-50%, -50%) translateY(${(index - currentIndex) * 24}px) translateX(${(index - currentIndex) * 32}px)`; // Уменьшено на 20%
   });
 
   // Ждем завершения анимации перед разблокировкой
-  await new Promise(resolve => setTimeout(resolve, 400)); // Уменьшаем время анимации
+  await new Promise(resolve => setTimeout(resolve, 300)); // Уменьшаем время анимации для мобильных устройств
   isScrolling = false;
 }
 
@@ -75,27 +80,20 @@ window.addEventListener('wheel', (e) => {
 });
 
 // Обработка свайпов для мобильных устройств
-let touchStartY = 0;
 let touchStartX = 0;
 window.addEventListener('touchstart', (e) => {
-  touchStartY = e.touches[0].clientY;
   touchStartX = e.touches[0].clientX;
 });
 
 window.addEventListener('touchend', (e) => {
-  const touchEndY = e.changedTouches[0].clientY;
   const touchEndX = e.changedTouches[0].clientX;
-  const swipeDistanceY = touchStartY - touchEndY;
   const swipeDistanceX = touchStartX - touchEndX;
 
   if (isSliderInViewport()) {
-    // Определяем направление свайпа (вертикальное или горизонтальное)
-    if (Math.abs(swipeDistanceY) > Math.abs(swipeDistanceX)) {
-      if (swipeDistanceY > 40) {
-        reorderSlides('next');
-      } else if (swipeDistanceY < -40) {
-        reorderSlides('prev');
-      }
+    if (swipeDistanceX > 40) {
+      reorderSlides('prev');
+    } else if (swipeDistanceX < -40) {
+      reorderSlides('next');
     }
   }
 });
@@ -113,12 +111,9 @@ sliderWrapper.addEventListener('click', (e) => {
   }
 });
 
-// Инициализация слайдов при загрузке страницы
-document.addEventListener('DOMContentLoaded', () => {
-  slides.forEach((slide, index) => {
-    const card = slide.querySelector('.slide-card');
-    card.style.zIndex = slides.length - index;
-    card.style.opacity = index === 0 ? 1 : 1; // Убираем прозрачность
-    card.style.transform = `translate(-50%, -50%) translateY(${index * 50}px) translateX(${index * 60}px)`; // Начальное положение
-  });
+// Обновление размеров слайдов при изменении размера окна
+window.addEventListener('resize', () => {
+  slider.style.width = '90%'; // Уменьшено на 5% (было 95%)
+  slider.style.height = window.innerWidth <= 768 ? '320px' : window.innerWidth >= 1200 ? '640px' : '480px'; // Уменьшено на 20%
+  updateSlides();
 });

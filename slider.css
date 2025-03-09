@@ -1,22 +1,21 @@
-/* Стили для слайдера с кейсами */
+/* Основные стили для слайдера */
 .cases {
-  padding: 20px 30px; /* Отступы сверху и снизу */
-  background-color: #f3f3f3; /* Белый фон, как раньше */
-  text-align: left; /* Возвращаем выравнивание текста по левому краю */
+  padding: 20px 20px;
+  background-color: #f3f3f3;
+  text-align: center;
 }
 
 .cases h2 {
-  margin-bottom: 20px; /* Отступ снизу для заголовка */
-  text-align: center; /* Заголовок по центру */
+  margin-bottom: 20px;
 }
 
 .slider {
-  width: 100%;
-  height: 600px; /* Высота слайдера */
+  width: 80%;
+  height: 500px; /* Высота слайдера */
   position: relative;
   margin: 0 auto;
   overflow: hidden;
-  perspective: 1000px; /* Перспектива для 3D-эффекта */
+  perspective: 1000px; /* 3D-эффект */
 }
 
 .slider-wrapper {
@@ -28,55 +27,43 @@
 }
 
 .slide {
+  position: absolute;
+  width: 100%;
+  height: 100%;
   display: flex;
   justify-content: center;
   align-items: center;
-  width: 100%;
-  height: 100%;
-  position: absolute;
-  transition: transform 0.8s ease, opacity 0.8s ease;
+  transition: transform 0.8s ease;
 }
 
-.slide-card {
-  width: 80%;
-  max-width: 600px;
-  height: 350px;
-  padding: 60px; /* Уменьшаем отступы внутри карточки */
-  border-radius: 15px;
-  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.7);
-  background: white;
-  color: #ffffff;
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  transition: transform 0.8s ease, opacity 0.8s ease;
-  text-align: left; /* Возвращаем выравнивание текста по левому краю */
-  border: none; /* Убираем рамки */
+.slide-image {
+  max-width: 80%; /* Максимальная ширина изображения */
+  max-height: 70%; /* Максимальная высота изображения */
+  object-fit: contain; /* Изображение помещается целиком внутри слайда */
+  border-radius: 15px; /* Скругляем углы изображения */
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.7); /* Тень для изображения */
 }
 
-.slide-card .slide-number {
-  font-size: 28px;
-  font-weight: bold;
-  margin-bottom: 10px;
-}
+/* Десктопная полноэкранная версия */
+@media (min-width: 1200px) {
+  .slider {
+    height: 800px; /* Увеличиваем высоту слайдера */
+  }
 
-.slide-card .slide-description {
-  font-size: 18px;
-  line-height: 1.6; /* Улучшаем читаемость текста */
+  .slide-image {
+    max-width: 90%; /* Увеличиваем ширину изображения */
+    max-height: 90%; /* Увеличиваем высоту изображения */
+  }
 }
 
 /* Адаптация для мобильных устройств */
 @media (max-width: 768px) {
-  .cases h2{
-    font-size: 24px;
-  }
-  
   .slider {
-      height: 400px; /* Уменьшаем высоту для мобильных устройств */
+    height: 400px; /* Уменьшаем высоту слайдера для мобильных устройств */
   }
 
-  .slide-card {
-      padding: 20px; /* Уменьшаем отступы для мобильных устройств */
+  .slide-image {
+    max-width: 80%; /* Увеличиваем ширину изображения для мобильных устройств */
+    max-height: 80%; /* Увеличиваем высоту изображения для мобильных устройств */
   }
 }
