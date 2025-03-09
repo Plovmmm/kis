@@ -92,7 +92,7 @@ body {
 /* шапка */
 /* Основные стили для шапки */
 .header {
-    margin-top: 10px; /* Отступ от фиксированной навигационной панели */
+    margin-top: 60px; /* Отступ от фиксированной навигационной панели */
     display: flex;
     justify-content: space-between; /* Распределяем пространство между текстом и картинкой */
     align-items: center; /* Выравниваем элементы по центру по вертикали */
@@ -115,13 +115,13 @@ body {
     margin-left: 30px;
     margin-right: 20px; /* Отступ между текстом и картинкой */
     margin-bottom: -20px;
-    margin-top: 20px;
+    margin-top: 40px;
 }
 
 .header h2 {
-    margin-left:30px;
-    font-size: 4.5vw; /* Размер шрифта зависит от ширины экрана */
-    line-height: 1.4;
+    margin-left:40px;
+    font-size: 4vw; /* Размер шрифта зависит от ширины экрана */
+    line-height: 1.1;
     text-align: left;
     max-width: 800px; /* Ограничиваем максимальную ширину текста */
 }
