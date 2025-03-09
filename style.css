@@ -90,7 +90,6 @@ body {
 }
 
 /* шапка */
-/* Основные стили для шапки */
 .header {
     margin-top: 60px; /* Отступ от фиксированной навигационной панели */
     display: flex;
@@ -101,7 +100,6 @@ body {
     max-width: 1600px; /* Ограничиваем максимальную ширину шапки */
     margin: 0 auto; /* Центрируем шапку на странице */
     width: 100%; /* Шапка занимает всю доступную ширину */
-   
 }
 
 .header-text {
@@ -119,7 +117,7 @@ body {
 }
 
 .header h2 {
-    margin-left:40px;
+    margin-left: 40px;
     font-size: 4vw; /* Размер шрифта зависит от ширины экрана */
     line-height: 1.1;
     text-align: left;
@@ -156,8 +154,8 @@ body {
         flex-direction: column; /* Меняем направление на вертикальное */
         align-items: flex-start; /* Выравниваем текст по левому краю */
         padding: 20px 15px; /* Уменьшаем отступы */
-        margin-left: 10%; /* Убираем отступ слева */
-        padding-top: 40px;
+        margin-left: 0; /* Убираем отступ слева */
+        padding-top: 50px;
         padding-bottom: 0;
         margin-bottom: 0;
     }
@@ -167,18 +165,17 @@ body {
     }
 
     .header h2 {
-        font-size: 34px; /* Уменьшаем размер шрифта для мобильных */
+        font-size: 24px; /* Уменьшаем размер шрифта для мобильных */
         line-height: 1.2; /* Уменьшаем межстрочный интервал */
         text-align: left; /* Выравниваем текст по левому краю */
         margin-top: 20px;
-        margin-bottom: 0;
+        margin-bottom: 10px;
+        margin-left: 0; /* Убираем отступ слева */
     }
 
     .header-image {
         width: 100%; /* Картинка занимает всю ширину */
-        margin-top: 0; /* Отступ между текстом и картинкой */
-        margin-left: 10px; /* Убираем отступ слева */
-        margin: 20px auto; /* Центрируем картинку */
+        margin: 0; /* Отступ между текстом и картинкой */
     }
 }
 
@@ -247,12 +244,12 @@ body {
 @media (max-width: 768px) {
     .header-buttons {
         flex-direction: column; /* Кнопки вертикально */
-        align-items: stretch; /* Растягиваем кнопки на всю ширину */
+        align-items: center; /* Растягиваем кнопки на всю ширину */
         gap: 15px; /* Расстояние между кнопками */
     }
 
     .button {
-        width: 100%; /* Кнопки занимают всю ширину */
+        width: 90%; /* Кнопки занимают всю ширину */
         font-size: 20px; /* Размер шрифта */
         padding: 15px 20px; /* Размеры кнопки */
         box-sizing: border-box; /* Учитываем padding в общей ширине */
@@ -443,7 +440,6 @@ h2 {
     background-color: #ff634d;
 }
 
-
 /*сотрудники */
 .team {
     padding: 50px 20px;
@@ -523,6 +519,8 @@ h2 {
     .team-member {
         width: 100%;
         margin-left: 0 !important; /* Отключаем отступы в мобильной версии */
+        transform: none !important; /* Отключаем трансформации */
+        opacity: 1; /* Делаем элементы видимыми */
     }
 
     .member-info {
@@ -547,18 +545,23 @@ h2 {
     }
 }
 
-
 /* Блок "Как с нами связаться" */
 .contact-section {
     background-color: #181414; /* Темный фон */
     color: white; /* Белый текст */
+    min-height: 100vh; /* Блок занимает всю высоту экрана */
+    display: flex;
+    flex-direction: column;
+    justify-content: center; /* Центрируем содержимое по вертикали */
+    align-items: center; /* Центрируем содержимое по горизонтали */
     padding: 50px 20px;
     text-align: center;
+    box-sizing: border-box; /* Учитываем padding в общей высоте */
 }
 
 .contact-section h2 {
     margin-bottom: 40px;
-
+    font-size: 2.5em; /* Уменьшаем размер заголовка для мобильных */
 }
 
 .contact-content {
@@ -566,8 +569,10 @@ h2 {
     justify-content: space-between;
     gap: 40px;
     max-width: 1200px;
+    width: 100%; /* Занимает всю доступную ширину */
     margin: 0 auto;
     padding: 20px;
+    box-sizing: border-box; /* Учитываем padding в общей ширине */
 }
 
 .contact-text {
@@ -577,7 +582,7 @@ h2 {
 }
 
 .contact-text p {
-    font-size: 24px;
+    font-size: 1.5em; /* Уменьшаем размер текста для мобильных */
     line-height: 1.6;
 }
 
@@ -593,7 +598,6 @@ h2 {
     margin-bottom: 20px;
     text-align: center;
     color: #181414; /* Черный текст */
-
 }
 
 .contact-form label {
@@ -637,6 +641,47 @@ h2 {
 
 .contact-form .submit-btn:hover {
     background-color: #e5533d; /* Темно-красный фон при наведении */
+}
+
+/* Адаптация для мобильных устройств */
+@media (max-width: 768px) {
+    .contact-section {
+        padding: 30px 15px; /* Уменьшаем padding для мобильных */
+    }
+
+    .contact-section h2 {
+        font-size: 2em; /* Уменьшаем размер заголовка */
+        margin-bottom: 20px;
+    }
+
+    .contact-content {
+        flex-direction: column; /* Элементы располагаются вертикально */
+        gap: 20px;
+        padding: 0;
+    }
+
+    .contact-text {
+        padding-right: 0;
+        text-align: center; /* Центрируем текст */
+    }
+
+    .contact-text p {
+        font-size: 1.2em; /* Уменьшаем размер текста */
+    }
+
+    .contact-form {
+        padding: 20px;
+    }
+
+    .contact-form h3 {
+        font-size: 1.5em; /* Уменьшаем размер заголовка формы */
+    }
+
+    .contact-form input,
+    .contact-form select,
+    .contact-form .submit-btn {
+        font-size: 14px; /* Уменьшаем размер шрифта для мобильных */
+    }
 }
 
 /* Футер */
@@ -733,6 +778,9 @@ h2 {
     .footer-content {
         flex-direction: column; /* Элементы футера вертикально */
         gap: 20px;
+    }
+    .footer-phone p {
+    font-size: 16px;
     }
 
     .footer-menu {
