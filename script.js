@@ -74,3 +74,18 @@ document.addEventListener("DOMContentLoaded", function() {
     });
 });
 
+document.addEventListener("DOMContentLoaded", function () {
+    const images = document.querySelectorAll('.header-images img'); // Выбираем все изображения
+    const delays = [100, 300, 500, 700]; // Задержки для каждого изображения
+
+    images.forEach((image, index) => {
+        image.style.opacity = 0; // Начальная прозрачность
+        image.style.transform = 'translateY(50px)'; // Начальное смещение вниз
+        image.style.transition = 'opacity 1.5s ease, transform 1.5s ease'; // Анимация
+
+        setTimeout(() => {
+            image.style.opacity = 1; // Появление
+            image.style.transform = 'translateY(0)'; // Возврат в исходное положение
+        }, delays[index]); // Применяем задержку
+    });
+});

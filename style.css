@@ -120,14 +120,80 @@ h2 {
     max-width: 60%; /* Ограничиваем ширину текста */
 }
 
-.header-image {
-    width: 45%; /* Уменьшаем ширину картинки */
-    height: auto; /* Сохраняем пропорции */
+/* Стили для контейнера с изображениями */
+.header-images {
+    display: flex;
+    gap: 10px;
+    width: 40%;
     margin-left: 30px;
-    margin-right: 20px; /* Отступ между текстом и картинкой */
+    margin-right: 20px;
     margin-bottom: -20px;
-    margin-top: 40px;
+    margin-top: 10px;
 }
+
+/* Стили для колонок */
+.image-column {
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+}
+
+/* Смещение первой колонки на 15px вниз */
+.image-column:first-child {
+    margin-top: 25px;
+}
+
+/* Стили для изображений */
+.header-images img {
+    width: 120%;
+    height: auto;
+    max-width: 100%;
+    transform: scale(1.5);
+    transform-origin: top left;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3); /* Тень для изображений */
+    border-radius: 15px; /* Скругление углов */
+    opacity: 0; /* Начальная прозрачность для анимации */
+    transform: translateY(50px); /* Начальное смещение для анимации */
+    transition: opacity 1.0s ease, transform 1.0s ease; /* Анимация */
+}
+
+/* Адаптация для мобильной версии */
+@media (max-width: 768px) {
+    .header {
+        flex-direction: column; /* Размещаем элементы вертикально */
+        align-items: center; /* Центрируем элементы */
+    }
+
+    .header-text {
+        order: 1; /* Текст будет первым */
+        max-width: 100%; /* Текст занимает всю ширину */
+        text-align: center; /* Центрируем текст */
+    }
+
+    .header-images {
+        order: 2; /* Изображения будут под текстом */
+        width: 100%;
+        margin: 20px 0; /* Отступы сверху и снизу */
+        flex-direction: row; /* Размещаем колонки в ряд */
+        justify-content: center; /* Центрируем колонки */
+        gap: 20px; /* Расстояние между колонками */
+    }
+
+    .image-column {
+        gap: 20px; /* Расстояние между изображениями */
+    }
+
+    .image-column:first-child {
+        margin-top: 0; /* Убираем смещение для первой колонки */
+    }
+
+    .header-images img {
+        transform: scale(1); /* Возвращаем исходный размер */
+        width: 100%; /* Изображения занимают всю ширину колонки */
+    }
+}
+
+
 
 .header h2 {
     margin-left: 40px;
@@ -341,6 +407,7 @@ h2 {
     background-color: #ff634d;
 }
 
+
 /*сотрудники */
 .komanda {
     background-color: #c5a5ff;
@@ -427,17 +494,28 @@ h2 {
     }
     .team-member {
         width: 100%;
-        margin-left: 0 !important; /* Отключаем отступы в мобильной версии */
+        margin-left: 0 !important; /* Убираем отступы */
         transform: none !important; /* Отключаем трансформации */
         opacity: 1; /* Делаем элементы видимыми */
     }
 
     .member-info {
+        width: 100%;
         padding: 15px;
+        box-sizing: border-box; /* Учитываем padding в общей ширине */
     }
 
     .member-info h3 {
-        margin-bottom: 5px;
+        font-size: 20px;
+    }
+
+    .member-info p {
+        font-size: 16px;
+        padding-left: 15px;
+    }
+
+    .expand-button {
+        font-size: 20px;
     }
 
     .member-info p {
