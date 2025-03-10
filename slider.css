@@ -1,68 +1,85 @@
-/* Основные стили для слайдера */
+/* Стили для слайдера с кейсами */
 .cases {
-  padding: 20px;
-  background-color: #f3f3f3;
-  text-align: center;
+  padding: 20px 30px; /* Отступы сверху и снизу */
+  background-color: #f3f3f3; /* Белый фон, как раньше */
+  text-align: left; /* Возвращаем выравнивание текста по левому краю */
 }
 
 .cases h2 {
-  margin-bottom: 20px;
+  margin-bottom: 20px; /* Отступ снизу для заголовка */
+  text-align: center; /* Заголовок по центру */
 }
 
 .slider {
-  width: 80%;
-  height: 500px;
+  width: 100%;
+  height: 600px; /* Высота слайдера */
   position: relative;
   margin: 0 auto;
   overflow: hidden;
-  perspective: 1000px;
+  perspective: 1000px; /* Перспектива для 3D-эффекта */
 }
 
 .slider-wrapper {
   position: relative;
   width: 100%;
   height: 100%;
-  transform-style: preserve-3d;
-  transition: transform 0.8s ease;
+  transform-style: preserve-3d; /* Сохраняем 3D-преобразования */
+  transition: transform 0.8s ease; /* Плавное переключение */
 }
 
 .slide {
-  position: absolute;
-  width: 100%;
-  height: 100%;
   display: flex;
   justify-content: center;
   align-items: center;
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  transition: transform 0.8s ease, opacity 0.8s ease;
 }
 
-.slide-image {
-  max-width: 80%;
-  max-height: 70%;
-  object-fit: contain;
+.slide-card {
+  width: 80%;
+  max-width: 600px;
+  height: 350px;
+  padding: 60px; /* Уменьшаем отступы внутри карточки */
   border-radius: 15px;
   box-shadow: 0 10px 20px rgba(0, 0, 0, 0.7);
+  background: white;
+  color: #ffffff;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  transition: transform 0.8s ease, opacity 0.8s ease;
+  text-align: left; /* Возвращаем выравнивание текста по левому краю */
+  border: none; /* Убираем рамки */
 }
 
-/* Десктопная полноэкранная версия */
-@media (min-width: 1200px) {
-  .slider {
-    height: 800px;
-  }
+.slide-card .slide-number {
+  font-size: 28px;
+  font-weight: bold;
+  margin-bottom: 10px;
+}
 
-  .slide-image {
-    max-width: 90%;
-    max-height: 90%;
-  }
+.slide-card .slide-description {
+  font-size: 18px;
+  line-height: 1.6; /* Улучшаем читаемость текста */
 }
 
 /* Адаптация для мобильных устройств */
 @media (max-width: 768px) {
+  .cases{
+    padding: 0;
+    padding-top: 10px;
+    padding-bottom: 10px;
+  }
   .slider {
-    height: 400px;
+      min-width: 100%;
+
+      margin: 0px;
   }
 
-  .slide-image {
-    max-width: 90%;
-    max-height: 90%;
+  .slide-card {
+      padding: 20px; /* Уменьшаем отступы для мобильных устройств */
   }
 }

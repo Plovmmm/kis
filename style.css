@@ -255,7 +255,7 @@ h2 {
     }
 
     .header h2 {
-        font-size: 45px; /* Уменьшаем размер шрифта для мобильных */
+        font-size: 5vh; /* Уменьшаем размер шрифта для мобильных */
         line-height: 1.2; /* Уменьшаем межстрочный интервал */
         text-align: center; /* Выравниваем текст по левому краю */
         margin-top: 50px;
@@ -264,7 +264,7 @@ h2 {
     }
 
     .header h2 span:first-child {
-        font-size: 45px; /* Фиксированный размер для Boostmarket на мобильных */
+        font-size: 7vh; /* Фиксированный размер для Boostmarket на мобильных */
     }
 }
 
@@ -545,26 +545,22 @@ h2 {
 /* Блок "Как с нами связаться" */
 .contact-section {
     background-color: #181414; /* Темный фон */
+    min-height: 100vh;
     color: white; /* Белый текст */
-    min-height: 100vh; /* Блок занимает всю высоту экрана */
-    display: flex;
-    flex-direction: column;
-    justify-content: center; /* Центрируем содержимое по вертикали */
-    align-items: center; /* Центрируем содержимое по горизонтали */
     padding: 50px 20px;
     text-align: center;
     box-sizing: border-box; /* Учитываем padding в общей высоте */
 }
 
 .contact-section h2 {
-    margin-bottom: 40px;
+    margin-bottom: 0px;
     font-size: 2.5em; /* Уменьшаем размер заголовка для мобильных */
 }
 
 .contact-content {
     display: flex;
-    justify-content: space-between;
-    gap: 40px;
+    flex-direction: column; /* Располагаем элементы вертикально */
+    gap: 10px;
     max-width: 1200px;
     width: 100%; /* Занимает всю доступную ширину */
     margin: 0 auto;
@@ -573,34 +569,36 @@ h2 {
 }
 
 .contact-text {
-    flex: 1;
     text-align: left;
-    padding-right: 20px;
 }
 
 .contact-text p {
     font-size: 1.5em; /* Уменьшаем размер текста для мобильных */
     line-height: 1.6;
+    min-height: 15vh;
 }
 
 .contact-form {
-    flex: 1;
     background-color: #f3f3f3; /* Светло-серый фон */
+    min-height: 40vh;
     padding: 30px;
+    padding-top: 0px;
     border-radius: 20px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
 
 .contact-form h3 {
-    margin-bottom: 20px;
+    margin-bottom: 10px;
     text-align: center;
     color: #181414; /* Черный текст */
+    font-size: 24px;
 }
 
 .contact-form label {
     display: block;
     margin-bottom: 8px;
     font-weight: bold;
+    font-size: 20px;
     color: #181414; /* Черный текст */
 }
 
