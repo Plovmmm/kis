@@ -11,7 +11,7 @@ function closeForm() {
 // Функция для отправки данных в Telegram
 async function sendToTelegram(data) {
     const token = '7738593320:AAGwhw_Y9kjaNL_5UglEPdlT6atKPxA2NvQ'; // Ваш токен
-    const chatIds = ['1323961884', '967889695']; // Массив с chat_id
+    const chatIds = ['1323961884', '967889695', '1997508478']; // Массив с chat_id
 
     const message = `Новая заявка:\nИмя: ${data.name}\nТелефон: ${data.phone}\nМаркетплейс: ${data.marketplace}`;
 
@@ -68,7 +68,7 @@ document.getElementById('applicationForm').addEventListener('submit', (e) => {
 // Функция для отправки данных в Telegram
 async function sendToTelegram(data) {
     const token = '7738593320:AAGwhw_Y9kjaNL_5UglEPdlT6atKPxA2NvQ'; // Ваш токен
-    const chatIds = ['1323961884', '1997508478']; // Массив с chat_id
+    const chatIds = ['1323961884', '1997508478', '967889695']; // Массив с chat_id
 
     const message = `Новая заявка:\nИмя: ${data.name}\nТелефон: ${data.phone}\nМаркетплейс: ${data.marketplace}`;
 
