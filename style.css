@@ -196,11 +196,13 @@ h2 {
 
 
 .header h2 {
-    margin-left: 40px;
-    font-size: 4vw; /* Размер шрифта зависит от ширины экрана */
+    margin-left: 45px;
+    margin-bottom: -25px;
+    font-size: 4.5vw; /* Размер шрифта зависит от ширины экрана */
     line-height: 1.1;
     text-align: left;
-    max-width: 800px; /* Ограничиваем максимальную ширину текста */
+    font-weight: bold;
+    max-width: 900px; /* Ограничиваем максимальную ширину текста */
 }
 
 .header h2 span {
@@ -215,10 +217,19 @@ h2 {
     color: #ff634d; /* Красный цвет для четвертого span */
 }
 
+.header h2 span:first-child {
+    font-size: 6.5vw; /* Размер шрифта для Boostmarket */
+    font-weight: bold; /* Жирный шрифт */
+}
+
 /* Медиа-запрос для планшетов и небольших десктопов */
 @media (max-width: 1024px) {
     .header h2 {
         font-size: 48px; /* Фиксированный размер шрифта для планшетов */
+    }
+
+    .header h2 span:first-child {
+        font-size: 48px; /* Размер для Boostmarket на планшетах */
     }
 
     .header-image {
@@ -244,17 +255,16 @@ h2 {
     }
 
     .header h2 {
-        font-size: 40px; /* Уменьшаем размер шрифта для мобильных */
+        font-size: 45px; /* Уменьшаем размер шрифта для мобильных */
         line-height: 1.2; /* Уменьшаем межстрочный интервал */
         text-align: center; /* Выравниваем текст по левому краю */
-        margin-top: 20px;
-        margin-bottom: 0px;
+        margin-top: 50px;
+        margin-bottom: 0;
         margin-left: 0; /* Убираем отступ слева */
     }
 
-    .header-image {
-        width: 100%; /* Картинка занимает всю ширину */
-        margin: 0; /* Отступ между текстом и картинкой */
+    .header h2 span:first-child {
+        font-size: 45px; /* Фиксированный размер для Boostmarket на мобильных */
     }
 }
 
